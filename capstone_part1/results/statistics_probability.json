@@ -1,0 +1,49 @@
+{
+  "n_unique_hours": 40575,
+  "mean": 3290.650474430068,
+  "median": 3427.0,
+  "sample_standard_deviation": 1984.7729092722152,
+  "sample_variance": 3939323.501380893,
+  "minimum": 0.0,
+  "maximum": 7280.0,
+  "range": 7280.0,
+  "pearson_temperature_traffic": 0.13945532988717102,
+  "hourly_probability": {
+    "n": 40575,
+    "congestion_count": 6107,
+    "P_congestion": 0.1505113986444855,
+    "P_clear": 0.3293653727664818,
+    "P_congestion_and_clear": 0.04342575477510782,
+    "P_clear_given_congestion": 0.2885213689209104,
+    "P_hot_given_congestion": 0.2782053381365646,
+    "independence_product": 0.04957324292014552,
+    "independence_absolute_gap": 0.006147488145037697,
+    "clear_cloudy_table": {
+      "clear_congested": 1762,
+      "clear_uncongested": 11602,
+      "cloudy_congested": 2586,
+      "cloudy_uncongested": 12537
+    },
+    "odds_ratio_clear_vs_cloudy": 0.7362717684885917,
+    "odds_ratio_excluded_other_weather": 12088
+  },
+  "raw_observation_probability_sensitivity": {
+    "n": 48204,
+    "congestion_count": 7100,
+    "P_congestion": 0.1472906812712638,
+    "P_clear": 0.277798522944154,
+    "P_congestion_and_clear": 0.03657372832130114,
+    "P_clear_given_congestion": 0.2483098591549296,
+    "P_hot_given_congestion": 0.26295774647887327,
+    "independence_product": 0.04091713370059525,
+    "independence_absolute_gap": 0.004343405379294112,
+    "clear_cloudy_table": {
+      "clear_congested": 1763,
+      "clear_uncongested": 11628,
+      "cloudy_congested": 2592,
+      "cloudy_uncongested": 12572
+    },
+    "odds_ratio_clear_vs_cloudy": 0.7353882125733118,
+    "odds_ratio_excluded_other_weather": 19649
+  }
+}

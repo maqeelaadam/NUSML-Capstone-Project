@@ -1,0 +1,21 @@
+{
+  "raw_shape": [
+    48204,
+    9
+  ],
+  "missing_cells": {
+    "holiday": 0,
+    "temp": 0,
+    "rain_1h": 0,
+    "snow_1h": 0,
+    "clouds_all": 0,
+    "weather_main": 0,
+    "weather_description": 0,
+    "date_time": 0,
+    "traffic_volume": 0
+  },
+  "raw_unique_hours": 40575,
+  "exact_duplicates": 17,
+  "zero_kelvin": 10,
+  "rain_above_9000": 1
+}

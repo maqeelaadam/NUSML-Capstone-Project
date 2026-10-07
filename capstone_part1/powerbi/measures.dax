@@ -1,0 +1,7 @@
+// Add individually to the imported Traffic table. Display the data grain on the dashboard.
+Total Hours Analysed = DISTINCTCOUNT(Traffic[date_time])
+Average Traffic Volume = AVERAGE(Traffic[traffic_volume])
+Average Temperature Celsius = AVERAGE(Traffic[Temperature_Celsius])
+Raw Observation Count = COUNTROWS(Traffic)
+// For an hourly dashboard, import data/processed/hourly_traffic.csv as Traffic instead.
+// The raw table's observation averages may differ due to repeated weather records.
