@@ -1,0 +1,5 @@
+2026-10-08 03:22:38,128 | INFO | __main__ | Starting raw validation scaffold
+2026-10-08 03:22:38,128 | INFO | capstone_part2.data_io | Schema validated: 9 columns
+2026-10-08 03:22:38,189 | INFO | capstone_part2.data_io | Loaded 48204 rows and 9 columns from /Users/aqeelaadam/Documents/ChatGPT/NUSML/NUSML-Capstone-Project/data/raw/Metro_Interstate_Traffic_Volume.csv
+2026-10-08 03:22:38,261 | INFO | __main__ | Saved raw profile to /Users/aqeelaadam/Documents/ChatGPT/NUSML/NUSML-Capstone-Project/data/processed/raw_profile.json
+2026-10-08 03:22:38,262 | INFO | __main__ | Validation complete; cleaning, full features, figures and CLI remain pending

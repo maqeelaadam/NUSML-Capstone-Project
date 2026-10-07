@@ -1,0 +1,5 @@
+# Initial analytics environment; record a tested lock file after implementation.
+numpy
+pandas
+matplotlib
+jupyterlab

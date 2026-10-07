@@ -1,0 +1,8 @@
+-r requirements.txt
+scikit-learn
+mlflow
+fastapi
+uvicorn
+shap
+mlxtend
+# Add and pin the selected deep-learning library when Task 3 is implemented.

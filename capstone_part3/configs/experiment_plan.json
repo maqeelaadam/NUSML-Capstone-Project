@@ -1,0 +1,46 @@
+{
+  "status": "proposed, not implemented",
+  "random_seed": 42,
+  "split": {
+    "strategy": "chronological_by_unique_timestamp",
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "regression": {
+    "target": "traffic_volume",
+    "algorithms": [
+      "linear_regression",
+      "random_forest_regressor"
+    ],
+    "metrics": [
+      "MAE",
+      "R2"
+    ]
+  },
+  "classification": {
+    "target": "high_risk_proxy",
+    "algorithms": [
+      "logistic_regression",
+      "random_forest_classifier"
+    ],
+    "metrics": [
+      "accuracy",
+      "precision",
+      "recall",
+      "F1",
+      "ROC_AUC"
+    ],
+    "weather_mapping_status": "pending audit and justification"
+  },
+  "unsupervised": [
+    "kmeans",
+    "association_rules"
+  ],
+  "deep_learning": "feed_forward_demand_network",
+  "explainability": "SHAP or LIME",
+  "advanced_technique": "MLflow",
+  "deployment": "FastAPI simulation",
+  "monitoring": "feature distribution drift with PASS/ALERT",
+  "recommendation_scope": "travel timing on one corridor"
+}
