@@ -8,6 +8,7 @@ import warnings
 from pathlib import Path
 import joblib
 import mlflow
+from mlflow.exceptions import MlflowException
 import numpy as np
 import pandas as pd
 from sklearn.pipeline import Pipeline
@@ -123,7 +124,7 @@ def main():
     try:
         logging.basicConfig(level=logging.INFO,format="%(asctime)s | %(levelname)s | %(name)s | %(message)s",handlers=[logging.StreamHandler(),logging.FileHandler(ROOT/"capstone_part3/training.log",encoding="utf-8")],force=True)
         train();return 0
-    except (OSError,ValueError,KeyError,RuntimeError,ImportError) as exc:
+    except (OSError,ValueError,KeyError,RuntimeError,ImportError,MlflowException) as exc:
         logger.error("Training failed: %s",exc,exc_info=True);return 1
 
 

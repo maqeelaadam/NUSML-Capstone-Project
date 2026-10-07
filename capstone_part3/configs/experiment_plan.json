@@ -1,5 +1,5 @@
 {
-  "status": "proposed, not implemented",
+  "status": "implemented and verified; Power BI deliverable remains pending",
   "random_seed": 42,
   "split": {
     "strategy": "chronological_by_unique_timestamp",
@@ -10,8 +10,9 @@
   "regression": {
     "target": "traffic_volume",
     "algorithms": [
-      "linear_regression",
-      "random_forest_regressor"
+      "ridge_regression",
+      "random_forest_regression",
+      "neural_demand_network"
     ],
     "metrics": [
       "MAE",
@@ -31,16 +32,17 @@
       "F1",
       "ROC_AUC"
     ],
-    "weather_mapping_status": "pending audit and justification"
+    "weather_mapping_status": "implemented and documented in results/label_definition.json"
   },
   "unsupervised": [
     "kmeans",
     "association_rules"
   ],
-  "deep_learning": "feed_forward_demand_network",
-  "explainability": "SHAP or LIME",
+  "deep_learning": "64/32 ReLU feed-forward network with training-only early stopping",
+  "explainability": "SHAP on comparable random forest; additive reconstruction verified",
   "advanced_technique": "MLflow",
   "deployment": "FastAPI simulation",
   "monitoring": "feature distribution drift with PASS/ALERT",
-  "recommendation_scope": "travel timing on one corridor"
+  "recommendation_scope": "travel timing on one corridor",
+  "tracking_distribution": "mlflow-skinny"
 }

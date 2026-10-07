@@ -82,7 +82,7 @@ The API starts locally at http://127.0.0.1:8000. Its interactive documentation i
 
 Every module uses `logging.getLogger(__name__)`. Entry points configure console and file handlers, with timestamp, log level, module/logger name and message. INFO covers milestones, shapes and save paths; WARNING covers recoverable changes with counts/reasons; ERROR covers failures; DEBUG captures internal values only with `--log-level DEBUG`. Internal progress uses logging; print is reserved for CLI answers. The checked-in `capstone_part2/pipeline.log` is a genuine completed pipeline run. Other logs are generated under their respective part folders.
 
-Training stores MLflow runs under `.runtime/mlruns` and exports grader-readable records to capstone_part3/experiments/tracking_export.json. Saved models go under capstone_part3/models and are rebuilt by the training command. Use `mlflow ui --backend-store-uri .runtime/mlruns` to inspect the local runs. model_versions.csv records candidate releases and selection; binary model artifacts, runtime stores and generated datasets are ignored to keep the repository portable.
+Training stores MLflow runs under `.runtime/mlruns` and exports grader-readable records to capstone_part3/experiments/tracking_export.json. Saved models go under capstone_part3/models and are rebuilt by the training command. The exported JSON can be inspected without a tracking server. An interactive MLflow UI requires the full MLflow distribution; the pinned environment uses mlflow-skinny for programmatic tracking. model_versions.csv records candidate releases and selection; binary model artifacts, runtime stores and generated datasets are ignored to keep the repository portable.
 
 ## Important assumptions
 
