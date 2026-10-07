@@ -1,7 +1,12 @@
 # Part 1 Data analytics
 
-Status: analysis framework only. Complete SQLite loading, descriptive statistics/correlation, probability, Power Query preparation, the actual Power BI dashboard, and a 1–2 page insights report.
+SQLite loading, required annual/holiday queries, descriptive statistics, correlation, congestion probabilities, independence comparison and clear/cloudy odds ratio have been run. Results are saved under results/. Both raw-record and unique-hour annual outputs are supplied; the primary interpretation uses unique hours with coverage caveats.
 
-`sql/traffic_analysis.sql` supplies initial audit, annual-trend and holiday queries against a table named `traffic_raw`. Import the CSV into SQLite with its original column names, verify numeric types and row counts, and document the final cleaning/hourly policy. The raw annual totals are required preliminary results; they can double-count repeated hour readings and need coverage context.
+```bash
+python -m capstone_part2.pipeline
+python -m capstone_part1.analyze
+```
 
-Use `notebooks/analysis_outline.md` for statistical and probability work, `powerbi/DASHBOARD_SPEC.md` for dashboard authoring, and `reports/insights_report_outline.md` for the written deliverable. These are outlines, not completed submissions.
+The SQLite database is regenerated at data/processed/traffic.sqlite. sql/traffic_analysis.sql contains the key queries; analyze.py executes and exports results. reports/insights_report.pdf is the two-page report, with editable Markdown alongside it.
+
+**Remaining:** build and validate the actual Power BI dashboard. powerbi/traffic_import.pq imports/prepares the raw CSV using a TrafficCsvPath parameter; measures.dax supplies KPI measures. DASHBOARD_SPEC.md lists visuals/slicers. If the dashboard uses the prepared hourly table, explicitly document that grain and repeat the required Power Query checks. Raw-record averages differ from hourly averages. No completed PBIX is claimed.

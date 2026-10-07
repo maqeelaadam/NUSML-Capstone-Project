@@ -12,8 +12,8 @@
         "MAE": 804.8445981098499,
         "R2": 0.7344850866973998
       },
-      "seconds": 0.11357541591860354,
-      "mlflow_run_id": "d746e17b7346451e9effe1d036155c9a",
+      "seconds": 0.10246033396106213,
+      "mlflow_run_id": "a67dfa95b9774b5283e189acbbe25ca2",
       "model_artifact": "capstone_part3/models/ridge_regression.joblib",
       "convergence_warnings": []
     },
@@ -29,8 +29,8 @@
         "MAE": 223.75733740831416,
         "R2": 0.9636531386968723
       },
-      "seconds": 2.0732050000224262,
-      "mlflow_run_id": "dea724ab52254e59a45d58fa761dce52",
+      "seconds": 2.066011792048812,
+      "mlflow_run_id": "17451f09738d48a38956699e679a8d93",
       "model_artifact": "capstone_part3/models/random_forest_regression.joblib",
       "convergence_warnings": []
     },
@@ -52,8 +52,8 @@
         "F1": 0.8331226295828066,
         "ROC_AUC": 0.9939153627232513
       },
-      "seconds": 0.07263479090761393,
-      "mlflow_run_id": "e33cd864ebaf40f6a869971a0e005006",
+      "seconds": 0.06849524995777756,
+      "mlflow_run_id": "2fa462d105f6496293cb7ed6f3214c88",
       "model_artifact": "capstone_part3/models/logistic_proxy_classifier.joblib",
       "convergence_warnings": []
     },
@@ -75,8 +75,8 @@
         "F1": 0.9325762952448545,
         "ROC_AUC": 0.9977722062878103
       },
-      "seconds": 0.47248845803551376,
-      "mlflow_run_id": "9b36062325934992b8577e5153a78651",
+      "seconds": 0.4691007090732455,
+      "mlflow_run_id": "7fa928dda9c049cda8b2a2ab1ef78e62",
       "model_artifact": "capstone_part3/models/random_forest_proxy_classifier.joblib",
       "convergence_warnings": []
     },
@@ -92,8 +92,8 @@
         "MAE": 245.1362804034028,
         "R2": 0.9613450003567113
       },
-      "seconds": 1.3953515000175685,
-      "mlflow_run_id": "4451f6f4478148cb9fb3d021d48c090f",
+      "seconds": 1.400615334045142,
+      "mlflow_run_id": "d29ed385b7b14632b79bed4d7176ed63",
       "model_artifact": "capstone_part3/models/neural_demand_network.joblib",
       "convergence_warnings": []
     }

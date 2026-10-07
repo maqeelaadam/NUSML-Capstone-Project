@@ -1,5 +1,4 @@
-# Initial analytics environment; record a tested lock file after implementation.
+# Analytics dependencies; use requirements-lock.txt for the verified environment.
 numpy
 pandas
 matplotlib
-jupyterlab

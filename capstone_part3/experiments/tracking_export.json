@@ -1,9 +1,9 @@
 [
   {
-    "run_id": "d746e17b7346451e9effe1d036155c9a",
+    "run_id": "a67dfa95b9774b5283e189acbbe25ca2",
     "status": "FINISHED",
-    "start_time": 1791405185543,
-    "end_time": 1791405185600,
+    "start_time": 1791405786653,
+    "end_time": 1791405786702,
     "params": {
       "split": "chronological 70/15/15",
       "seed": "42",
@@ -13,19 +13,19 @@
       "model_version": "v1"
     },
     "metrics": {
-      "fit_and_evaluate_seconds": 0.11357541591860354,
+      "fit_and_evaluate_seconds": 0.10246033396106213,
       "test_R2": 0.7344850866973998,
       "test_MAE": 804.8445981098499,
       "validation_R2": 0.7269839033793367,
       "validation_MAE": 803.2885532169825
     },
-    "artifact_uri": "file:///Users/aqeelaadam/Documents/ChatGPT/NUSML/NUSML-Capstone-Project/.runtime/mlruns/437199793135861575/d746e17b7346451e9effe1d036155c9a/artifacts"
+    "artifact_uri": "file:///Users/aqeelaadam/Documents/ChatGPT/NUSML/NUSML-Capstone-Project/.runtime/mlruns/437199793135861575/a67dfa95b9774b5283e189acbbe25ca2/artifacts"
   },
   {
-    "run_id": "dea724ab52254e59a45d58fa761dce52",
+    "run_id": "17451f09738d48a38956699e679a8d93",
     "status": "FINISHED",
-    "start_time": 1791405185601,
-    "end_time": 1791405187752,
+    "start_time": 1791405786704,
+    "end_time": 1791405788839,
     "params": {
       "split": "chronological 70/15/15",
       "seed": "42",
@@ -35,19 +35,19 @@
       "model_version": "v1"
     },
     "metrics": {
-      "fit_and_evaluate_seconds": 2.0732050000224262,
+      "fit_and_evaluate_seconds": 2.066011792048812,
       "test_R2": 0.9636531386968723,
       "test_MAE": 223.75733740831416,
       "validation_R2": 0.9587950254923288,
       "validation_MAE": 248.26670741454402
     },
-    "artifact_uri": "file:///Users/aqeelaadam/Documents/ChatGPT/NUSML/NUSML-Capstone-Project/.runtime/mlruns/437199793135861575/dea724ab52254e59a45d58fa761dce52/artifacts"
+    "artifact_uri": "file:///Users/aqeelaadam/Documents/ChatGPT/NUSML/NUSML-Capstone-Project/.runtime/mlruns/437199793135861575/17451f09738d48a38956699e679a8d93/artifacts"
   },
   {
-    "run_id": "e33cd864ebaf40f6a869971a0e005006",
+    "run_id": "2fa462d105f6496293cb7ed6f3214c88",
     "status": "FINISHED",
-    "start_time": 1791405187753,
-    "end_time": 1791405187832,
+    "start_time": 1791405788840,
+    "end_time": 1791405788915,
     "params": {
       "split": "chronological 70/15/15",
       "seed": "42",
@@ -58,7 +58,7 @@
     },
     "metrics": {
       "test_F1": 0.8331226295828066,
-      "fit_and_evaluate_seconds": 0.07263479090761393,
+      "fit_and_evaluate_seconds": 0.06849524995777756,
       "validation_ROC_AUC": 0.9971306240143802,
       "test_precision": 0.7178649237472767,
       "validation_recall": 0.9864661654135338,
@@ -69,13 +69,13 @@
       "test_recall": 0.9924698795180723,
       "test_accuracy": 0.956628881222277
     },
-    "artifact_uri": "file:///Users/aqeelaadam/Documents/ChatGPT/NUSML/NUSML-Capstone-Project/.runtime/mlruns/437199793135861575/e33cd864ebaf40f6a869971a0e005006/artifacts"
+    "artifact_uri": "file:///Users/aqeelaadam/Documents/ChatGPT/NUSML/NUSML-Capstone-Project/.runtime/mlruns/437199793135861575/2fa462d105f6496293cb7ed6f3214c88/artifacts"
   },
   {
-    "run_id": "9b36062325934992b8577e5153a78651",
+    "run_id": "7fa928dda9c049cda8b2a2ab1ef78e62",
     "status": "FINISHED",
-    "start_time": 1791405187833,
-    "end_time": 1791405188323,
+    "start_time": 1791405788916,
+    "end_time": 1791405789402,
     "params": {
       "split": "chronological 70/15/15",
       "seed": "42",
@@ -86,7 +86,7 @@
     },
     "metrics": {
       "test_F1": 0.9325762952448545,
-      "fit_and_evaluate_seconds": 0.47248845803551376,
+      "fit_and_evaluate_seconds": 0.4691007090732455,
       "validation_ROC_AUC": 0.9987708618530278,
       "test_precision": 0.8818791946308725,
       "validation_recall": 0.9834586466165414,
@@ -97,13 +97,13 @@
       "test_recall": 0.9894578313253012,
       "test_accuracy": 0.9843929686216527
     },
-    "artifact_uri": "file:///Users/aqeelaadam/Documents/ChatGPT/NUSML/NUSML-Capstone-Project/.runtime/mlruns/437199793135861575/9b36062325934992b8577e5153a78651/artifacts"
+    "artifact_uri": "file:///Users/aqeelaadam/Documents/ChatGPT/NUSML/NUSML-Capstone-Project/.runtime/mlruns/437199793135861575/7fa928dda9c049cda8b2a2ab1ef78e62/artifacts"
   },
   {
-    "run_id": "4451f6f4478148cb9fb3d021d48c090f",
+    "run_id": "d29ed385b7b14632b79bed4d7176ed63",
     "status": "FINISHED",
-    "start_time": 1791405188324,
-    "end_time": 1791405189725,
+    "start_time": 1791405789403,
+    "end_time": 1791405790810,
     "params": {
       "split": "chronological 70/15/15",
       "seed": "42",
@@ -113,12 +113,12 @@
       "model_version": "v1"
     },
     "metrics": {
-      "fit_and_evaluate_seconds": 1.3953515000175685,
+      "fit_and_evaluate_seconds": 1.400615334045142,
       "test_R2": 0.9613450003567113,
       "test_MAE": 245.1362804034028,
       "validation_R2": 0.9519747075623068,
       "validation_MAE": 267.52543226334933
     },
-    "artifact_uri": "file:///Users/aqeelaadam/Documents/ChatGPT/NUSML/NUSML-Capstone-Project/.runtime/mlruns/437199793135861575/4451f6f4478148cb9fb3d021d48c090f/artifacts"
+    "artifact_uri": "file:///Users/aqeelaadam/Documents/ChatGPT/NUSML/NUSML-Capstone-Project/.runtime/mlruns/437199793135861575/d29ed385b7b14632b79bed4d7176ed63/artifacts"
   }
 ]

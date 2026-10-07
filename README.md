@@ -1,64 +1,101 @@
 # Smart City Traffic Intelligence
 
-NUS School of Computing AMLDS capstone framework for historical westbound I-94 traffic analysis, reproducible Python analytics, and a simulated AI mobility solution.
+NUS School of Computing AMLDS capstone using the Metro Interstate Traffic Volume dataset to analyse historical westbound I-94 demand, build a reproducible Python pipeline, and simulate an AI mobility solution.
 
-**Status: framework established; capstone analysis and models are not yet complete.** This repository maps the supplied capstone brief into three connected workstreams. The starter pipeline validates input and records its profile; it does not yet clean data, train models, or produce final findings.
+**Status: analytical and Python/ML workflows implemented and run; actual Power BI dashboard and final course submission remain pending.** The supplied capstone instructions and GitHub guide were reviewed before implementation. No accident dataset was supplied: classification uses a documented weather/congestion **proxy**, never a validated prediction of actual accidents.
 
-Start with [the roadmap](docs/ROADMAP.md), [the requirements checklist](docs/REQUIREMENTS.md), and [the analytical decisions](docs/DECISIONS.md).
+## Start here
+
+- [Current status and remaining work](docs/STATUS.md)
+- [Course requirements and evidence](docs/REQUIREMENTS.md)
+- [Analytical definitions and decisions](docs/DECISIONS.md)
+- [Part 1 insights report](capstone_part1/reports/insights_report.pdf)
+- [Part 2 methodology report](capstone_part2/reports/methodology_report.pdf)
+- [Capstone report across all tasks](capstone_part3/reports/final_report.pdf)
+- [Bias, fairness and sustainability report](capstone_part3/reports/bias_fairness_report.pdf)
+
+## What works
+
+Part 1 supplies verified SQLite loading, annual/holiday outputs, statistics, correlation, required congestion probabilities and odds ratio. Power Query import code, DAX measures and a dashboard specification are ready; a completed PBIX is still required.
+
+Part 2 loads and validates the raw CSV, logs each cleaning stage, engineers calendar/weather/scaled features, saves four figures with interpretations, and runs three traffic-query commands. It produces 48,187 cleaned observations and 40,575 hourly records from 48,204 raw observations.
+
+Part 3 compares two regressors and two proxy classifiers, trains a two-hidden-layer neural demand model, produces four traffic clusters and association rules, applies SHAP to a comparable tree model, records five real MLflow experiments, recommends travel windows using historical data and model estimates, serves a local FastAPI prediction simulation, and demonstrates PASS/ALERT drift monitoring.
+
+On the chronological test set, the selected forest's traffic MAE is about 224 vehicles/hour with R² 0.964; the neural model's MAE is about 245. Models were selected using validation performance. These are historical conditional estimates with observed weather, not real-time forecasts. Nine acceptance checks passed.
 
 ## Project structure
 
 ```text
-NUSML-Capstone-Project/
-├── capstone_part1/          # SQLite, statistics, probability, Power BI, insights
-├── capstone_part2/          # Python pipeline, features, figures, mini application
-├── capstone_part3/          # ML, explainability, recommendations, MLOps
-├── data/                   # Immutable raw data and generated data (ignored)
-├── docs/                   # Requirements, roadmap, decisions, data dictionary
-├── scripts/import_data.py  # Import the supplied CSV without modifying it
-├── requirements.txt        # Analytics dependencies
-├── requirements-ml.txt     # Later ML dependencies
-└── .github/                # Task and pull request templates
+capstone_part1/   SQLite queries, analysis script, results, Power BI assets, report
+capstone_part2/   Logged cleaning/features/figures pipeline and mini application
+capstone_part3/   Models, SHAP, rules, recommendations, API, monitoring, reports
+scripts/         Data import and complete reproduction commands
+tests/           Schema, leakage, CLI, API and monitoring acceptance checks
+data/            Provenance; raw and generated datasets ignored by Git
+docs/            Requirements, decisions, status and GitHub workflow
+.github/         Task and pull request templates
 ```
 
-The course brief explicitly names `capstone_part2` and `capstone_part3`; this framework uses corresponding names for all three parts. These map to the GitHub guide's illustrative `part1_data_analytics`, `part2_python`, and `part3_machine_learning` folders.
+Folder names follow the brief's explicit `capstone_part2` and `capstone_part3` deliverable names. They correspond to the GitHub guide's illustrative part1_data_analytics / part2_python / part3_machine_learning layout.
 
-## Getting started
+## Reproduce
 
-Use Python 3.11 or later. Run commands from the repository root.
+Use **Python 3.12** and run from the repository root. The tested environment is pinned in requirements-lock.txt. Raw data and binary models are not committed; the commands regenerate them.
 
 ```bash
-python3 -m venv .venv
+python3.12 -m venv .venv
 source .venv/bin/activate
-python -m pip install -r requirements.txt
+python -m pip install -r requirements-lock.txt
 python scripts/import_data.py --source "/path/to/Metro_Interstate_Traffic_Volume.csv"
-python -m capstone_part2.pipeline
+python scripts/reproduce.py
 ```
 
-The import and starter pipeline use Python's standard library and can run before installing analytics dependencies. The raw CSV is intentionally ignored by Git; obtain it from your supplied file or the [UCI source](https://archive.ics.uci.edu/dataset/492/metro+interstate+traffic+volume). Course Word documents are not redistributed here.
-
-The starter pipeline saves `data/processed/raw_profile.json` and logs to `capstone_part2/pipeline.log`. To inspect internal values:
+To run stages separately:
 
 ```bash
-python -m capstone_part2.pipeline --log-level DEBUG
+python -m capstone_part2.pipeline
+python -m capstone_part1.analyze
+python -m capstone_part3.train
+python -m capstone_part3.unsupervised.analyze
+python -m capstone_part3.explainability.explain
+python -m capstone_part3.monitoring.check
+python -m capstone_part3.recommendations.engine
+python -m unittest discover -s tests -v
 ```
 
-`capstone_part2/feature_engineering.py` provides initial calendar features. Cleaning, weather encodings, fitted scaling, quartile targets, figures, and the mini application remain pending. See the Part 2 README for intended future commands.
+Reports are checked-in results from the verified runs. Re-running workflows changes result files; review and regenerate reports if numerical outputs change. The current reports are authored reviewable documents, not automatically refreshed by reproduce.py.
 
-## Logging
+## Traffic application and API
 
-Every Python module declares `logging.getLogger(__name__)`. Handlers are configured only by entry points and write to the console and a file. Format: timestamp, level, logger/module name, message. INFO is the normal level; DEBUG appears only when selected. WARNING records recoverable changes with affected counts and reasons; ERROR records failures. The pipeline captures exception details and returns a nonzero exit status. Internal progress uses logging; `print()` is reserved for future CLI answers. The checked-in sample log demonstrates the **starter validation run**, not a completed cleaning pipeline.
+```bash
+python -m capstone_part2.mini_app at --datetime "2017-01-01 12:00:00"
+python -m capstone_part2.mini_app high-traffic --threshold 5500 --limit 10
+python -m capstone_part2.mini_app compare-day-types
+python -m capstone_part3.recommendations.engine --day-type weekday --weather Clear --earliest 6 --latest 22
+python -m capstone_part3.deployment.api
+```
 
-## Modelling plan and limitations
+The API starts locally at http://127.0.0.1:8000. Its interactive documentation is at `/docs`; POST `/predict` using capstone_part3/deployment/example_request.json. A verified response is supplied alongside it. No public service has been deployed.
 
-Use chronological train/validation/test partitions and keep identical timestamps in one partition. Fit preprocessing and target quartiles on training data only. Use a common time, weather and holiday feature set for classification and regression; exclude traffic volume and labels derived from it as predictors. No accident dataset or travel-time target is supplied. Classification will demonstrate the specified **proxy accident-risk label**, never actual accident prediction. Recommendations concern travel timing on one corridor.
+## Logging and model records
 
-Part 3 will compare linear/logistic baselines with tree ensembles, add clustering and association rules, implement neural-network demand prediction with SHAP or LIME, and use MLflow, a FastAPI mock-up, and simulated drift alerts. These components are planned, not implemented.
+Every module uses `logging.getLogger(__name__)`. Entry points configure console and file handlers, with timestamp, log level, module/logger name and message. INFO covers milestones, shapes and save paths; WARNING covers recoverable changes with counts/reasons; ERROR covers failures; DEBUG captures internal values only with `--log-level DEBUG`. Internal progress uses logging; print is reserved for CLI answers. The checked-in `capstone_part2/pipeline.log` is a genuine completed pipeline run. Other logs are generated under their respective part folders.
 
-## GitHub workflow
+Training stores MLflow runs under `.runtime/mlruns` and exports grader-readable records to capstone_part3/experiments/tracking_export.json. Saved models go under capstone_part3/models and are rebuilt by the training command. Use `mlflow ui --backend-store-uri .runtime/mlruns` to inspect the local runs. model_versions.csv records candidate releases and selection; binary model artifacts, runtime stores and generated datasets are ignored to keep the repository portable.
 
-Commit each completed task with a descriptive message and push it. Use `codex/` branches for substantial changes and the pull request template for review. The initial framework commits are setup history; they do not substitute for incremental commits made while implementing the capstone. [Import and collaboration instructions](docs/GITHUB_WORKFLOW.md) include the local backup workflow.
+## Important assumptions
 
-## Data attribution
+The main analytical grain is one record per observed hour. Traffic values match at repeated timestamps; numeric weather readings are averaged and the highest-severity weather category is selected. Missing hours remain missing. Holiday labels are propagated only within dates with an observed holiday label. These choices and alternative raw-record results are documented.
 
-Hogue, J. (2019). *Metro Interstate Traffic Volume*. UCI Machine Learning Repository. https://doi.org/10.24432/C5X60B. Dataset licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). See [data/README.md](data/README.md) for provenance and the supplied file's checksum.
+Part 1 congestion is always volume >5500 and uses fixed Low/Medium/High categories. Part 2/3 quartile categories are separately named. ML partitions are chronological, with identical timestamps kept together; imputation references, scalers, encoders and label quartiles are fitted on training data only. Inputs exclude traffic targets and their derived labels. Recommendations concern timing on one corridor; the proxy, API, and monitoring require further validation before operational use.
+
+## GitHub and submission
+
+Continue with descriptive commits for coherent tasks. [GitHub workflow](docs/GITHUB_WORKFLOW.md) explains the ZIP and Git bundle backups. Review the reports and remaining dashboard task before submitting the repository URL through Canvas. No grader invitation or Canvas submission has been sent.
+
+## Data attribution and sources
+
+Hogue, J. (2019). *Metro Interstate Traffic Volume*. [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/492/metro+interstate+traffic+volume). DOI 10.24432/C5X60B. Dataset licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); provenance and checksum are in data/README.md. The raw file in the local backup is unchanged; cleaning transformations are documented. Course Word documents are not redistributed.
+
+Implementation references include the [Python Logging HOWTO](https://docs.python.org/3/howto/logging.html), [scikit-learn neural network documentation](https://scikit-learn.org/stable/modules/neural_networks_supervised.html), [MLflow tracking](https://mlflow.org/docs/latest/ml/tracking/), and [FastAPI request bodies](https://fastapi.tiangolo.com/tutorial/body/).

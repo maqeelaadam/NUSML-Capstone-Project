@@ -1,0 +1,6 @@
+{
+  "predicted_vehicles_per_hour": 3962.6666558376282,
+  "model_version": "v1",
+  "simulation": true,
+  "scope": "Retrospective traffic estimate given supplied weather; single corridor."
+}

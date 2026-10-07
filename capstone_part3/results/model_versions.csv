@@ -1,0 +1,6 @@
+release,algorithm,algorithm_artifact_version,validation_selection_metric,mlflow_run_id,status
+traffic-v1-baseline,ridge_regression,v1,803.2885532169825,a67dfa95b9774b5283e189acbbe25ca2,comparison
+traffic-v2-forest,random_forest_regression,v1,248.26670741454402,17451f09738d48a38956699e679a8d93,selected
+proxy-v1-baseline,logistic_proxy_classifier,v1,0.8864864864864865,2fa462d105f6496293cb7ed6f3214c88,comparison
+proxy-v2-forest,random_forest_proxy_classifier,v1,0.9624724061810155,7fa928dda9c049cda8b2a2ab1ef78e62,selected
+traffic-v3-neural,neural_demand_network,v1,267.52543226334933,d29ed385b7b14632b79bed4d7176ed63,comparison

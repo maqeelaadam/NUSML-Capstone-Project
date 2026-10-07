@@ -1,0 +1,8 @@
+{
+  "recommended_hour": 21,
+  "mean_vehicles_per_hour": 2733.2129032258063,
+  "model_estimate": 2413.107529637029,
+  "ranking_rule": "Equal weight historical mean and illustrative model estimate",
+  "supporting_hours": 310,
+  "message": "For a weekday journey in clear conditions, consider 21:00-22:00 within your selected hours. Training-period traffic averaged 2,733 vehicles/hour across 310 observations. The model estimates 2,413 vehicles/hour under an illustrative training-calendar scenario with mean weather inputs. This is historical timing advice for one corridor, not a safety or live-traffic guarantee."
+}

@@ -1,6 +1,6 @@
 # Analytical decisions and assumptions
 
-These are proposed implementation decisions, not extra instructions from the course brief.
+These document the implemented choices and remaining review points, rather than extra requirements from the course brief.
 
 ## Data integrity and coverage
 
@@ -35,3 +35,7 @@ Start with a small feed-forward neural demand model; consider LSTM only after ha
 ## Delivery boundaries
 
 Travel recommendations concern timing on a single corridor. API deployment and monitoring are simulations. Actual Power BI authoring is a separate deliverable: this scaffold supplies a specification, not a completed dashboard. Include reproducible model-artifact retrieval and exported MLflow evidence before submission; currently large artifacts and runtime tracking stores are ignored.
+
+## Implemented weather and recommendation choices
+
+Severe weather uses Thunderstorm, Squall and Snow. Low-visibility categories use Fog, Mist, Haze and Smoke; these are textual proxies, not measured visibility. Highest-severity category selection per hour is defined in cleaning.py. Numeric validation also flags temperature >350 K as a broad guard. Imputation uses month-of-year medians from the appropriate reference data. The recommendation engine combines historical mean and an illustrative model estimate equally; it uses training-calendar weekday/weekend scenarios with mean weather inputs and at least 20 observed hours per candidate.

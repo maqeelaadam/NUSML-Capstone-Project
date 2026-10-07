@@ -1,8 +1,9 @@
 -r requirements.txt
 scikit-learn
-mlflow
+mlflow-skinny
 fastapi
 uvicorn
 shap
 mlxtend
-# Add and pin the selected deep-learning library when Task 3 is implemented.
+joblib
+scipy

@@ -1,18 +1,20 @@
 # Part 3 Machine learning and AI
 
-Status: implementation plan only. No model has been trained or served.
+The supervised models, neural demand network, clusters, rules, SHAP explanations, MLflow runs, recommendation engine, API simulation and drift checks have been implemented and run. All accident-risk classification metrics concern a documented proxy; no real accident dataset was sourced.
 
-Use the documented accident-risk **proxy**, because no accident data is supplied. Regression predicts traffic volume; no measured travel-time target is available. The shared predictor set includes time, weather, holiday flag and cyclical hour/day-of-week encodings. Exclude traffic volume and its derived labels from predictors.
+```bash
+python -m capstone_part3.train
+python -m capstone_part3.unsupervised.analyze
+python -m capstone_part3.explainability.explain
+python -m capstone_part3.monitoring.check
+python -m capstone_part3.recommendations.engine --day-type weekday --weather Clear
+python -m capstone_part3.deployment.api
+```
 
-Implement in this order:
+Run after importing raw data and running the Part 2 pipeline. requirements-lock.txt pins the tested Python 3.12 environment. training creates ignored binary models under models/ and the local MLflow store under .runtime/mlruns. results/model_comparison.json, split_manifest.json, label_definition.json, model_versions.csv and experiments/tracking_export.json supply evidence. The selected model is models/traffic_model.joblib, rebuilt by the training command.
 
-1. `supervised/`: chronological timestamp-grouped split, train-fitted transformations, two regression algorithms and two classifiers; required evaluation metrics.
-2. `unsupervised/`: interpreted K-means conditions and association rules predicting congestion, ranked by lift with support/confidence.
-3. `deep_learning/` and `explainability/`: neural demand prediction plus SHAP/LIME. Explain a comparable-model choice if used.
-4. `experiments/`: MLflow advanced-technique rationale and tracked parameters, metrics, model versions and experiments.
-5. `recommendations/`: lower-traffic travel windows with day/weather context and readable recommendations.
-6. `deployment/`: FastAPI model prediction simulation, input validation and example request/response.
-7. `monitoring/`: reference/current feature or prediction-error distributions, justified thresholds and PASS/ALERT evidence.
-8. `reports/`: final methodology/findings across all tasks, bias/fairness, governance/sustainability and versioned performance.
+Chronological partitions contain 28,402 train, 6,086 validation and 6,087 test hours. Imputation, preprocessing and target quartiles are train-fitted. Model selection uses validation MAE/F1. Both tasks use a shared calendar/weather/holiday predictor set with cyclic hour and weekday encodings. The target volume and its derived labels are excluded from predictors. Five runs compare ridge/forest regressors, logistic/forest classifiers and a (64,32) ReLU demand network. The forest achieves test MAE about 224 and R² about 0.964; classifier F1 about 0.933 is only proxy performance.
 
-`configs/experiment_plan.json` records proposed choices. Install `requirements-ml.txt` when implementation begins, select a deep-learning library, and lock the tested environment. Export grader-readable MLflow evidence and document model retrieval before final submission. Runtime tracking stores and binary models are ignored at framework stage.
+Full-data clustering/rules are labelled descriptive. SHAP explains the comparable forest, with an additivity check, rather than claiming direct explanations of the neural model. Recommendations combine train-period mean traffic with illustrative model estimates and supporting counts. Drift simulation uses a documented KS effect-size threshold with an identical-data PASS control and injected-temperature ALERT case.
+
+FastAPI serves POST /predict locally; request/response examples are in deployment/. Tests exercised valid and invalid requests. Actual deployment, live data and production controls are outside this educational simulation. reports/ contains final methodology/findings and bias/fairness/governance/sustainability reports in PDF and editable Markdown. See the root README for reproducibility and the outstanding Power BI deliverable.

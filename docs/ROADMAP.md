@@ -1,8 +1,8 @@
 # Implementation roadmap
 
-The stages below are a proposed sequence, without assumed submission dates. Complete each stage with a meaningful commit and update REQUIREMENTS.md with links to evidence.
+Stages 1-10 have implementation evidence except the actual Power BI dashboard and final review/submission. See STATUS.md for the current state. The sequence below records the work plan without assumed submission dates. Complete each stage with a meaningful commit and update REQUIREMENTS.md with links to evidence.
 
-1. **Establish the framework** — folder structure, requirements, raw-file provenance, starter logging and input validation. This is the current stage.
+1. **Establish the framework** — folder structure, requirements, raw-file provenance, starter logging and input validation. Framework stage complete.
 2. **Audit the raw data** — confirm types, missingness, duplicates, repeated timestamps, impossible readings, holiday encoding and temporal coverage. Write the cleaning policy before changing data.
 3. **Complete Part 1 analysis** — SQLite import and required queries; statistics and probability; explain denominator choices and coverage effects; build Power Query steps and the actual Power BI dashboard; finish the 1–2 page insights report.
 4. **Complete Part 2 cleaning** — implement independently logged cleaning steps with monthly median loops where justified, save a cleaned observation table, and verify it end-to-end.
