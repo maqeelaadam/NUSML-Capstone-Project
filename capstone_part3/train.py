@@ -109,7 +109,7 @@ def train():
     pd.DataFrame(group_rows).to_csv(RESULTS/"group_error_audit.csv",index=False)
     # Recommendation profiles use training hours only, avoiding future-period advice leakage.
     recommendation=features(train_hourly).assign(traffic_volume=train_hourly.traffic_volume)
-    recommendation.groupby(["is_weekend","weather_main","hour"]).traffic_volume.agg(["count","mean"]).reset_index().to_csv(RESULTS/"training_travel_profiles.csv",index=False)
+    recommendation.groupby(["is_weekend","weather_main","hour"]).agg(count=("traffic_volume","size"),mean=("traffic_volume","mean"),temp=("temp","mean"),rain_1h=("rain_1h","mean"),snow_1h=("snow_1h","mean"),clouds_all=("clouds_all","mean")).reset_index().to_csv(RESULTS/"training_travel_profiles.csv",index=False)
     client=mlflow.tracking.MlflowClient()
     exports=[]
     for record in records:

@@ -1,0 +1,6 @@
+{
+  "k": 4,
+  "sampled_silhouette": 0.3366160250349014,
+  "sample_size": 2000,
+  "interpretation": "Describe each profile using volume, cyclic time and weather; arithmetic mean hour alone can conceal midnight wraparound."
+}

@@ -1,0 +1,6 @@
+{
+  "sample_size": 150,
+  "max_additivity_error": 6.491518433904275e-11,
+  "explained_model": "random_forest_regression",
+  "neural_model_comparison": "Same prediction problem and shared features; tree explanations do not directly explain neural weights or outputs."
+}
