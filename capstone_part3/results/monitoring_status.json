@@ -1,0 +1,84 @@
+{
+  "threshold_rationale": "KS effect size >0.20 is a transparent classroom threshold requiring operational calibration; p-values are shown but not the sole trigger.",
+  "normal_control": {
+    "status": "PASS",
+    "checks": [
+      {
+        "feature": "temp",
+        "KS_statistic": 0.0,
+        "p_value": 1.0,
+        "threshold": 0.2,
+        "status": "PASS"
+      },
+      {
+        "feature": "rain_1h",
+        "KS_statistic": 0.0,
+        "p_value": 1.0,
+        "threshold": 0.2,
+        "status": "PASS"
+      },
+      {
+        "feature": "clouds_all",
+        "KS_statistic": 0.0,
+        "p_value": 1.0,
+        "threshold": 0.2,
+        "status": "PASS"
+      }
+    ],
+    "scope": "Feature distribution drift simulation; not proof of prediction degradation."
+  },
+  "observed_later_period": {
+    "status": "PASS",
+    "checks": [
+      {
+        "feature": "temp",
+        "KS_statistic": 0.18614737041717017,
+        "p_value": 1.5545626243631395e-152,
+        "threshold": 0.2,
+        "status": "PASS"
+      },
+      {
+        "feature": "rain_1h",
+        "KS_statistic": 0.0077483916952980625,
+        "p_value": 0.9218733053107395,
+        "threshold": 0.2,
+        "status": "PASS"
+      },
+      {
+        "feature": "clouds_all",
+        "KS_statistic": 0.0899198494815342,
+        "p_value": 1.0149372128632405e-35,
+        "threshold": 0.2,
+        "status": "PASS"
+      }
+    ],
+    "scope": "Feature distribution drift simulation; not proof of prediction degradation."
+  },
+  "injected_20K_shift": {
+    "status": "ALERT",
+    "checks": [
+      {
+        "feature": "temp",
+        "KS_statistic": 0.5959403324470807,
+        "p_value": 0.0,
+        "threshold": 0.2,
+        "status": "ALERT"
+      },
+      {
+        "feature": "rain_1h",
+        "KS_statistic": 0.0077483916952980625,
+        "p_value": 0.9218733053107395,
+        "threshold": 0.2,
+        "status": "PASS"
+      },
+      {
+        "feature": "clouds_all",
+        "KS_statistic": 0.0899198494815342,
+        "p_value": 1.0149372128632405e-35,
+        "threshold": 0.2,
+        "status": "PASS"
+      }
+    ],
+    "scope": "Feature distribution drift simulation; not proof of prediction degradation."
+  }
+}

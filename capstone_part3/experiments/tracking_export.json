@@ -1,0 +1,124 @@
+[
+  {
+    "run_id": "d746e17b7346451e9effe1d036155c9a",
+    "status": "FINISHED",
+    "start_time": 1791405185543,
+    "end_time": 1791405185600,
+    "params": {
+      "split": "chronological 70/15/15",
+      "seed": "42",
+      "model_name": "ridge_regression",
+      "proxy_label": "False",
+      "task": "regression",
+      "model_version": "v1"
+    },
+    "metrics": {
+      "fit_and_evaluate_seconds": 0.11357541591860354,
+      "test_R2": 0.7344850866973998,
+      "test_MAE": 804.8445981098499,
+      "validation_R2": 0.7269839033793367,
+      "validation_MAE": 803.2885532169825
+    },
+    "artifact_uri": "file:///Users/aqeelaadam/Documents/ChatGPT/NUSML/NUSML-Capstone-Project/.runtime/mlruns/437199793135861575/d746e17b7346451e9effe1d036155c9a/artifacts"
+  },
+  {
+    "run_id": "dea724ab52254e59a45d58fa761dce52",
+    "status": "FINISHED",
+    "start_time": 1791405185601,
+    "end_time": 1791405187752,
+    "params": {
+      "split": "chronological 70/15/15",
+      "seed": "42",
+      "model_name": "random_forest_regression",
+      "proxy_label": "False",
+      "task": "regression",
+      "model_version": "v1"
+    },
+    "metrics": {
+      "fit_and_evaluate_seconds": 2.0732050000224262,
+      "test_R2": 0.9636531386968723,
+      "test_MAE": 223.75733740831416,
+      "validation_R2": 0.9587950254923288,
+      "validation_MAE": 248.26670741454402
+    },
+    "artifact_uri": "file:///Users/aqeelaadam/Documents/ChatGPT/NUSML/NUSML-Capstone-Project/.runtime/mlruns/437199793135861575/dea724ab52254e59a45d58fa761dce52/artifacts"
+  },
+  {
+    "run_id": "e33cd864ebaf40f6a869971a0e005006",
+    "status": "FINISHED",
+    "start_time": 1791405187753,
+    "end_time": 1791405187832,
+    "params": {
+      "split": "chronological 70/15/15",
+      "seed": "42",
+      "model_name": "logistic_proxy_classifier",
+      "proxy_label": "True",
+      "task": "classification",
+      "model_version": "v1"
+    },
+    "metrics": {
+      "test_F1": 0.8331226295828066,
+      "fit_and_evaluate_seconds": 0.07263479090761393,
+      "validation_ROC_AUC": 0.9971306240143802,
+      "test_precision": 0.7178649237472767,
+      "validation_recall": 0.9864661654135338,
+      "validation_accuracy": 0.9723956621754847,
+      "validation_precision": 0.8049079754601227,
+      "validation_F1": 0.8864864864864865,
+      "test_ROC_AUC": 0.9939153627232513,
+      "test_recall": 0.9924698795180723,
+      "test_accuracy": 0.956628881222277
+    },
+    "artifact_uri": "file:///Users/aqeelaadam/Documents/ChatGPT/NUSML/NUSML-Capstone-Project/.runtime/mlruns/437199793135861575/e33cd864ebaf40f6a869971a0e005006/artifacts"
+  },
+  {
+    "run_id": "9b36062325934992b8577e5153a78651",
+    "status": "FINISHED",
+    "start_time": 1791405187833,
+    "end_time": 1791405188323,
+    "params": {
+      "split": "chronological 70/15/15",
+      "seed": "42",
+      "model_name": "random_forest_proxy_classifier",
+      "proxy_label": "True",
+      "task": "classification",
+      "model_version": "v1"
+    },
+    "metrics": {
+      "test_F1": 0.9325762952448545,
+      "fit_and_evaluate_seconds": 0.47248845803551376,
+      "validation_ROC_AUC": 0.9987708618530278,
+      "test_precision": 0.8818791946308725,
+      "validation_recall": 0.9834586466165414,
+      "validation_accuracy": 0.9916201117318436,
+      "validation_precision": 0.9423631123919308,
+      "validation_F1": 0.9624724061810155,
+      "test_ROC_AUC": 0.9977722062878103,
+      "test_recall": 0.9894578313253012,
+      "test_accuracy": 0.9843929686216527
+    },
+    "artifact_uri": "file:///Users/aqeelaadam/Documents/ChatGPT/NUSML/NUSML-Capstone-Project/.runtime/mlruns/437199793135861575/9b36062325934992b8577e5153a78651/artifacts"
+  },
+  {
+    "run_id": "4451f6f4478148cb9fb3d021d48c090f",
+    "status": "FINISHED",
+    "start_time": 1791405188324,
+    "end_time": 1791405189725,
+    "params": {
+      "split": "chronological 70/15/15",
+      "seed": "42",
+      "model_name": "neural_demand_network",
+      "proxy_label": "False",
+      "task": "regression",
+      "model_version": "v1"
+    },
+    "metrics": {
+      "fit_and_evaluate_seconds": 1.3953515000175685,
+      "test_R2": 0.9613450003567113,
+      "test_MAE": 245.1362804034028,
+      "validation_R2": 0.9519747075623068,
+      "validation_MAE": 267.52543226334933
+    },
+    "artifact_uri": "file:///Users/aqeelaadam/Documents/ChatGPT/NUSML/NUSML-Capstone-Project/.runtime/mlruns/437199793135861575/4451f6f4478148cb9fb3d021d48c090f/artifacts"
+  }
+]

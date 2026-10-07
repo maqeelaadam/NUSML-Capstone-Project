@@ -1,0 +1,104 @@
+{
+  "models": [
+    {
+      "name": "ridge_regression",
+      "task": "regression",
+      "version": "v1",
+      "validation": {
+        "MAE": 803.2885532169825,
+        "R2": 0.7269839033793367
+      },
+      "test": {
+        "MAE": 804.8445981098499,
+        "R2": 0.7344850866973998
+      },
+      "seconds": 0.11357541591860354,
+      "mlflow_run_id": "d746e17b7346451e9effe1d036155c9a",
+      "model_artifact": "capstone_part3/models/ridge_regression.joblib",
+      "convergence_warnings": []
+    },
+    {
+      "name": "random_forest_regression",
+      "task": "regression",
+      "version": "v1",
+      "validation": {
+        "MAE": 248.26670741454402,
+        "R2": 0.9587950254923288
+      },
+      "test": {
+        "MAE": 223.75733740831416,
+        "R2": 0.9636531386968723
+      },
+      "seconds": 2.0732050000224262,
+      "mlflow_run_id": "dea724ab52254e59a45d58fa761dce52",
+      "model_artifact": "capstone_part3/models/random_forest_regression.joblib",
+      "convergence_warnings": []
+    },
+    {
+      "name": "logistic_proxy_classifier",
+      "task": "classification",
+      "version": "v1",
+      "validation": {
+        "accuracy": 0.9723956621754847,
+        "precision": 0.8049079754601227,
+        "recall": 0.9864661654135338,
+        "F1": 0.8864864864864865,
+        "ROC_AUC": 0.9971306240143802
+      },
+      "test": {
+        "accuracy": 0.956628881222277,
+        "precision": 0.7178649237472767,
+        "recall": 0.9924698795180723,
+        "F1": 0.8331226295828066,
+        "ROC_AUC": 0.9939153627232513
+      },
+      "seconds": 0.07263479090761393,
+      "mlflow_run_id": "e33cd864ebaf40f6a869971a0e005006",
+      "model_artifact": "capstone_part3/models/logistic_proxy_classifier.joblib",
+      "convergence_warnings": []
+    },
+    {
+      "name": "random_forest_proxy_classifier",
+      "task": "classification",
+      "version": "v1",
+      "validation": {
+        "accuracy": 0.9916201117318436,
+        "precision": 0.9423631123919308,
+        "recall": 0.9834586466165414,
+        "F1": 0.9624724061810155,
+        "ROC_AUC": 0.9987708618530278
+      },
+      "test": {
+        "accuracy": 0.9843929686216527,
+        "precision": 0.8818791946308725,
+        "recall": 0.9894578313253012,
+        "F1": 0.9325762952448545,
+        "ROC_AUC": 0.9977722062878103
+      },
+      "seconds": 0.47248845803551376,
+      "mlflow_run_id": "9b36062325934992b8577e5153a78651",
+      "model_artifact": "capstone_part3/models/random_forest_proxy_classifier.joblib",
+      "convergence_warnings": []
+    },
+    {
+      "name": "neural_demand_network",
+      "task": "regression",
+      "version": "v1",
+      "validation": {
+        "MAE": 267.52543226334933,
+        "R2": 0.9519747075623068
+      },
+      "test": {
+        "MAE": 245.1362804034028,
+        "R2": 0.9613450003567113
+      },
+      "seconds": 1.3953515000175685,
+      "mlflow_run_id": "4451f6f4478148cb9fb3d021d48c090f",
+      "model_artifact": "capstone_part3/models/neural_demand_network.joblib",
+      "convergence_warnings": []
+    }
+  ],
+  "selected_regression": "random_forest_regression",
+  "selected_classifier": "random_forest_proxy_classifier",
+  "selection_basis": "validation MAE / validation F1"
+}

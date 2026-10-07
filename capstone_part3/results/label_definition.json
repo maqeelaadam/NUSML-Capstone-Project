@@ -1,0 +1,20 @@
+{
+  "training_quartiles": [
+    1211.0,
+    3364.0,
+    4943.0
+  ],
+  "severe_weather": [
+    "Snow",
+    "Squall",
+    "Thunderstorm"
+  ],
+  "low_visibility_categories": [
+    "Fog",
+    "Haze",
+    "Mist",
+    "Smoke"
+  ],
+  "formula": "High/Severe congestion AND severe/low-visibility weather",
+  "proxy_only": true
+}

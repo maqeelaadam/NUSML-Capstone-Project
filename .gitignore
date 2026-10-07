@@ -29,3 +29,5 @@ mlartifacts/
 
 .runtime/
 .mplconfig/
+
+capstone_part3/models/
