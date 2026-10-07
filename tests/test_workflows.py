@@ -60,6 +60,8 @@ class AcceptanceChecks(unittest.TestCase):
 
     def test_cli_invalid_date_returns_failure(self):
         self.assertEqual(cli_main(['at','--datetime','malformed']),1)
+        self.assertEqual(cli_main(['high-traffic','--limit','not-a-number']),2)
+        self.assertEqual(cli_main(['at']),2)
 
     def test_api_valid_and_invalid_requests(self):
         client=TestClient(app)
