@@ -1,0 +1,2 @@
+n,congested,clear,congested_and_clear,congested_and_hot,p_congestion,p_clear,p_congestion_and_clear,p_clear_given_congestion,p_hot_given_congestion,product_of_marginals,independence_gap
+48204,7100,13391,1763,1867,0.1472906812712638,0.277798522944154,0.03657372832130114,0.2483098591549296,0.26295774647887327,0.04091713370059525,-0.004343405379294112

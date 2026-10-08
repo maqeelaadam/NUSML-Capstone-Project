@@ -1,0 +1,265 @@
+{
+  "source_sha256": "749c90d720360a4215bb15345526073c079ba4cc95e3fa558796d083f85fce9e",
+  "analysis_grain": "All supplied CSV rows unless explicitly labelled holiday-hour supplement",
+  "queries": {
+    "data_audit": [
+      {
+        "raw_rows": 48204,
+        "distinct_hours": 40575,
+        "first_timestamp": "2012-10-02 09:00:00",
+        "last_timestamp": "2018-09-30 23:00:00",
+        "nonpositive_temperature_rows": 10
+      }
+    ],
+    "annual_traffic": [
+      {
+        "year": 2012,
+        "raw_rows": 2559,
+        "observed_hours": 2103,
+        "total_traffic_volume": 8208767,
+        "mean_traffic_per_record": 3207.802657288003,
+        "previous_total": null,
+        "absolute_change": null,
+        "percentage_change": null,
+        "direction": "Baseline",
+        "full_year_hour_coverage_pct": 23.941256830601095
+      },
+      {
+        "year": 2013,
+        "raw_rows": 8573,
+        "observed_hours": 7294,
+        "total_traffic_volume": 28177412,
+        "mean_traffic_per_record": 3286.762160270617,
+        "previous_total": 8208767,
+        "absolute_change": 19968645,
+        "percentage_change": 243.25998045747917,
+        "direction": "Increase",
+        "full_year_hour_coverage_pct": 83.2648401826484
+      },
+      {
+        "year": 2014,
+        "raw_rows": 4839,
+        "observed_hours": 4501,
+        "total_traffic_volume": 15731289,
+        "mean_traffic_per_record": 3250.9380037197766,
+        "previous_total": 28177412,
+        "absolute_change": -12446123,
+        "percentage_change": -44.17056825516836,
+        "direction": "Decrease",
+        "full_year_hour_coverage_pct": 51.381278538812786
+      },
+      {
+        "year": 2015,
+        "raw_rows": 4373,
+        "observed_hours": 3593,
+        "total_traffic_volume": 14181206,
+        "mean_traffic_per_record": 3242.9009833066543,
+        "previous_total": 15731289,
+        "absolute_change": -1550083,
+        "percentage_change": -9.853502786707434,
+        "direction": "Decrease",
+        "full_year_hour_coverage_pct": 41.01598173515982
+      },
+      {
+        "year": 2016,
+        "raw_rows": 9306,
+        "observed_hours": 7838,
+        "total_traffic_volume": 29494821,
+        "mean_traffic_per_record": 3169.441328175371,
+        "previous_total": 14181206,
+        "absolute_change": 15313615,
+        "percentage_change": 107.98527995432829,
+        "direction": "Increase",
+        "full_year_hour_coverage_pct": 89.23041894353369
+      },
+      {
+        "year": 2017,
+        "raw_rows": 10605,
+        "observed_hours": 8713,
+        "total_traffic_volume": 35428156,
+        "mean_traffic_per_record": 3340.7030645921736,
+        "previous_total": 29494821,
+        "absolute_change": 5933335,
+        "percentage_change": 20.116531644657208,
+        "direction": "Increase",
+        "full_year_hour_coverage_pct": 99.46347031963471
+      }
+    ],
+    "holiday_label_temperatures": [
+      {
+        "year": 2015,
+        "holiday": "Labor Day",
+        "labelled_rows": 1,
+        "labelled_hours": 1,
+        "labelled_date": "2015-09-07",
+        "mean_kelvin": 295.02,
+        "mean_celsius": 21.870000000000005,
+        "mean_labelled_traffic": 973.0,
+        "temperature_change_kelvin": null
+      },
+      {
+        "year": 2016,
+        "holiday": "Labor Day",
+        "labelled_rows": 2,
+        "labelled_hours": 1,
+        "labelled_date": "2016-09-05",
+        "mean_kelvin": 293.17,
+        "mean_celsius": 20.02000000000004,
+        "mean_labelled_traffic": 1064.0,
+        "temperature_change_kelvin": -1.849999999999966
+      },
+      {
+        "year": 2017,
+        "holiday": "Labor Day",
+        "labelled_rows": 1,
+        "labelled_hours": 1,
+        "labelled_date": "2017-09-04",
+        "mean_kelvin": 295.54,
+        "mean_celsius": 22.390000000000043,
+        "mean_labelled_traffic": 1026.0,
+        "temperature_change_kelvin": 2.3700000000000045
+      },
+      {
+        "year": 2015,
+        "holiday": "New Years Day",
+        "labelled_rows": 0,
+        "labelled_hours": 0,
+        "labelled_date": null,
+        "mean_kelvin": null,
+        "mean_celsius": null,
+        "mean_labelled_traffic": null,
+        "temperature_change_kelvin": null
+      },
+      {
+        "year": 2016,
+        "holiday": "New Years Day",
+        "labelled_rows": 2,
+        "labelled_hours": 1,
+        "labelled_date": "2016-01-01",
+        "mean_kelvin": 265.94,
+        "mean_celsius": -7.2099999999999795,
+        "mean_labelled_traffic": 1513.0,
+        "temperature_change_kelvin": null
+      },
+      {
+        "year": 2017,
+        "holiday": "New Years Day",
+        "labelled_rows": 1,
+        "labelled_hours": 1,
+        "labelled_date": "2017-01-02",
+        "mean_kelvin": 270.62,
+        "mean_celsius": -2.5299999999999727,
+        "mean_labelled_traffic": 798.0,
+        "temperature_change_kelvin": 4.680000000000007
+      }
+    ],
+    "full_labelled_holiday_dates": [
+      {
+        "holiday": "Labor Day",
+        "day": "2015-09-07",
+        "available_hours": 24,
+        "mean_kelvin": 295.32416666666666,
+        "mean_celsius": 22.17416666666668,
+        "mean_vehicles_per_hour": 2430.2916666666665,
+        "temperature_change_kelvin": null,
+        "traffic_percentage_change": null
+      },
+      {
+        "holiday": "Labor Day",
+        "day": "2016-09-05",
+        "available_hours": 24,
+        "mean_kelvin": 295.0058333333333,
+        "mean_celsius": 21.85583333333335,
+        "mean_vehicles_per_hour": 2151.5416666666665,
+        "temperature_change_kelvin": -0.31833333333332803,
+        "traffic_percentage_change": -11.469816722958493
+      },
+      {
+        "holiday": "Labor Day",
+        "day": "2017-09-04",
+        "available_hours": 24,
+        "mean_kelvin": 291.28625,
+        "mean_celsius": 18.136250000000018,
+        "mean_vehicles_per_hour": 2395.1666666666665,
+        "temperature_change_kelvin": -3.7195833333333326,
+        "traffic_percentage_change": 11.323275945542925
+      },
+      {
+        "holiday": "New Years Day",
+        "day": "2016-01-01",
+        "available_hours": 18,
+        "mean_kelvin": 267.0911111111111,
+        "mean_celsius": -6.058888888888873,
+        "mean_vehicles_per_hour": 1832.0,
+        "temperature_change_kelvin": null,
+        "traffic_percentage_change": null
+      },
+      {
+        "holiday": "New Years Day",
+        "day": "2017-01-02",
+        "available_hours": 24,
+        "mean_kelvin": 271.8483333333333,
+        "mean_celsius": -1.3016666666666765,
+        "mean_vehicles_per_hour": 2091.0833333333335,
+        "temperature_change_kelvin": 4.757222222222197,
+        "traffic_percentage_change": 14.142103347889384
+      }
+    ],
+    "traffic_statistics": [
+      {
+        "n": 48204,
+        "mean_traffic": 3259.8183553232097,
+        "median_traffic": 3380.0,
+        "sample_variance": 3947615.323766554,
+        "sample_standard_deviation": 1986.8606704463587,
+        "population_variance": 3947533.429829873,
+        "population_standard_deviation": 1986.8400614618865,
+        "minimum_traffic": 0,
+        "maximum_traffic": 7280,
+        "traffic_range": 7280
+      }
+    ],
+    "temperature_correlation": [
+      {
+        "n": 48204,
+        "pearson_r": 0.13029879817112658
+      }
+    ],
+    "correlation_positive_temperature_sensitivity": [
+      {
+        "n": 48194,
+        "pearson_r": 0.13229131507313127
+      }
+    ],
+    "congestion_probabilities": [
+      {
+        "n": 48204,
+        "congested": 7100,
+        "clear": 13391,
+        "congested_and_clear": 1763,
+        "congested_and_hot": 1867,
+        "p_congestion": 0.1472906812712638,
+        "p_clear": 0.277798522944154,
+        "p_congestion_and_clear": 0.03657372832130114,
+        "p_clear_given_congestion": 0.2483098591549296,
+        "p_hot_given_congestion": 0.26295774647887327,
+        "product_of_marginals": 0.04091713370059525,
+        "independence_gap": -0.004343405379294112
+      }
+    ],
+    "clear_cloudy_odds_ratio": [
+      {
+        "a_clear_congested": 1763,
+        "b_clear_not_congested": 11628,
+        "c_cloudy_congested": 2592,
+        "d_cloudy_not_congested": 12572,
+        "excluded_other_weather": 19649,
+        "clear_odds": 0.15161678706570347,
+        "cloudy_odds": 0.20617244670696785,
+        "odds_ratio": 0.7353882125733118,
+        "clear_congestion_probability": 0.13165558957508774,
+        "cloudy_congestion_probability": 0.17093115273015036
+      }
+    ]
+  }
+}

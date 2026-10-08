@@ -1,0 +1,2 @@
+a_clear_congested,b_clear_not_congested,c_cloudy_congested,d_cloudy_not_congested,excluded_other_weather,clear_odds,cloudy_odds,odds_ratio,clear_congestion_probability,cloudy_congestion_probability
+1763,11628,2592,12572,19649,0.15161678706570347,0.20617244670696785,0.7353882125733118,0.13165558957508774,0.17093115273015036
