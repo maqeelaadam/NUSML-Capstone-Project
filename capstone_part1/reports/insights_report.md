@@ -51,4 +51,4 @@ After cleaning and combining repeated timestamps, the separate hourly view has m
 
 Hourly mean demand peaks at 16:00 (5,709 vehicles/hour); weekdays average 3,557 versus 2,624 on weekends. Prioritise time/day patterns for travel advice, show recording coverage and weather sample sizes, and avoid causal weather or accident claims. The actual Power BI dashboard remains unfinished; import code, measures and a specification are supplied.
 
-Evidence: requested_raw_analysis.sql and results/requested_raw_analysis/ contain primary SQLite outputs; raw_sql_answers.md contains full calculations. Supplementary hourly outputs are in results/statistics_probability.json. Source: Hogue (2019), UCI Metro Interstate Traffic Volume, DOI 10.24432/C5X60B, CC BY 4.0.
+Evidence: requested_raw_analysis.sql and results/requested_raw_analysis/ contain primary SQLite outputs; raw_sql_answers.md contains full calculations. Supplementary hourly outputs are in results/statistics_probability.json.

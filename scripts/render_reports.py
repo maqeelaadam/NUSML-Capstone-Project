@@ -1,4 +1,4 @@
-"""Render the edited insights and final reports from their Markdown sources."""
+"""Render the four capstone reports from their Markdown sources."""
 import logging
 from pathlib import Path
 logger=logging.getLogger(__name__)
@@ -24,7 +24,7 @@ def footer(canvas,doc):
  canvas.setFont('Helvetica',8);canvas.setFillColor(colors.HexColor('#555555'))
  canvas.drawString(44,30,'NUS AMLDS Capstone | 8 October 2026 | Historical analysis and simulation')
  canvas.drawRightString(A4[0]-44,30,str(doc.page))
-for path in [root/'capstone_part1/reports/insights_report.md',root/'capstone_part3/reports/final_report.md']:
+for path in [root/'capstone_part1/reports/insights_report.md',root/'capstone_part2/reports/methodology_report.md',root/'capstone_part3/reports/final_report.md',root/'capstone_part3/reports/bias_fairness_report.md']:
  lines=path.read_text().splitlines();story=[];i=0
  while i<len(lines):
   line=lines[i].strip()

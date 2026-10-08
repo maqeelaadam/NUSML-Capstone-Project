@@ -37,5 +37,3 @@ Only use this new-destination procedure for an empty repository. A ZIP is a file
 - Verify the repository URL. For a public repository, check grader access without login. For a private repository, invite the grader using their verified GitHub username and confirm acceptance.
 - Ensure figures, required sample logs, reports, dashboard and MLflow evidence are tracked or reproducibly accessible.
 - Submit the repository URL through Canvas yourself. No invitations or submissions are sent by this framework.
-
-Reference: [GitHub's local-code import guide](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github).

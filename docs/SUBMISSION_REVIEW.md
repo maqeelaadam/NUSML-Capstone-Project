@@ -25,7 +25,7 @@ python -m capstone_part3.deployment.api
 
 Restoration reconstructs .runtime/mlruns and capstone_part3/models, updating file URIs to the current checkout. Training is not needed to inspect saved models, tracking records or the API. Original training timestamps and numerical metrics remain unchanged. The archive omits earlier exploratory runs and includes exactly the five runs reported in tracking_export.json. The pinned mlflow-skinny installation supports programmatic tracking inspection; an optional visual MLflow UI requires the full MLflow package.
 
-Dataset-dependent CLI queries and complete reproduction also require importing the supplied CSV. The root README provides these commands. `scripts/reproduce.py` runs the primary SQLite answers as well as the supplementary hourly analysis and all implemented Python/ML stages. Reports are checked-in verified results, not automatically refreshed after retraining. To regenerate edited insights/final PDFs from their Markdown, use `python scripts/render_reports.py`.
+Dataset-dependent CLI queries and complete reproduction also require importing the supplied CSV. The root README provides these commands. `scripts/reproduce.py` runs the primary SQLite answers as well as the supplementary hourly analysis and all implemented Python/ML stages. Reports are checked-in verified results, not automatically refreshed after retraining. To regenerate all four report PDFs from their Markdown, use `python scripts/render_reports.py`.
 
 ## Before course submission
 

@@ -24,4 +24,4 @@ Monitoring uses a transparent KS effect-size threshold and simulated PASS/ALERT 
 
 Bounded CPU experiments use two worker threads, 100-tree ensembles, a small two-hidden-layer neural model and fixed seeds. A feed-forward model avoids the extra sequence preparation and search cost of an LSTM at this stage. Runtime is recorded per experiment, but electrical energy and carbon emissions are not measured, so no numerical carbon claim is made. Prefer the smallest model that meets validated requirements, cache reproducible outputs, avoid repeated full training without a reason, and record any future larger hyperparameter search and deployment resource cost.
 
-Source: project holdout metrics and group_error_audit.csv; Hogue (2019), UCI Metro Interstate Traffic Volume, DOI 10.24432/C5X60B. This is a methodological fairness assessment, not a certification of safety or equal outcomes.
+The error assessment uses the project holdout metrics and group_error_audit.csv. This is a methodological fairness assessment, not a certification of safety or equal outcomes.

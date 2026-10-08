@@ -96,4 +96,4 @@ Weather and congestion show an observed association, but the weak temperature co
 
 Run from the project root: `python -m capstone_part1.run_requested_sql --csv "/path/to/Metro_Interstate_Traffic_Volume.csv"`. The script imports the raw file into SQLite; all statistical/probability calculations are executed by the supplied SQL queries. Results are under capstone_part1/results/requested_raw_analysis/. A separate Python standard-library check independently verified statistics, correlation, annual sums and event counts.
 
-Source: the user-supplied CSV, SHA-256 749c90d720360a4215bb15345526073c079ba4cc95e3fa558796d083f85fce9e. No external dataset was substituted.
+Input verification: the user-supplied CSV, SHA-256 749c90d720360a4215bb15345526073c079ba4cc95e3fa558796d083f85fce9e. No external dataset was substituted.

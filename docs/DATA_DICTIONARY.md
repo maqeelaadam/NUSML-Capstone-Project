@@ -12,4 +12,4 @@
 | date_time | Supplied local CST timestamp | Parse, validate, audit coverage and repeats |
 | traffic_volume | Hourly westbound I-94 count | Nonnegative integer; retain valid zero values |
 
-Do not infer actual accidents, speeds, travel times, other corridors, or measured visibility from this schema. Source: [UCI dataset documentation](https://archive.ics.uci.edu/dataset/492/metro+interstate+traffic+volume).
+Do not infer actual accidents, speeds, travel times, other corridors, or measured visibility from this schema.

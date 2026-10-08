@@ -105,8 +105,6 @@ Part 1 congestion is always volume >5500 and uses fixed Low/Medium/High categori
 
 Continue with descriptive commits for coherent tasks. [GitHub workflow](docs/GITHUB_WORKFLOW.md) explains the ZIP and Git bundle backups. Review the reports and remaining dashboard task before submitting the repository URL through Canvas. No grader invitation or Canvas submission has been sent.
 
-## Data attribution and sources
+## Dataset licence
 
-Hogue, J. (2019). *Metro Interstate Traffic Volume*. [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/492/metro+interstate+traffic+volume). DOI 10.24432/C5X60B. Dataset licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); provenance and checksum are in data/README.md. The raw file in the local backup is unchanged; cleaning transformations are documented. Course Word documents are not redistributed.
-
-Implementation references include the [Python Logging HOWTO](https://docs.python.org/3/howto/logging.html), [scikit-learn neural network documentation](https://scikit-learn.org/stable/modules/neural_networks_supervised.html), [MLflow tracking](https://mlflow.org/docs/latest/ml/tracking/), and [FastAPI request bodies](https://fastapi.tiangolo.com/tutorial/body/).
+Dataset licensing and provenance details are recorded in [data/README.md](data/README.md). Course Word documents are not redistributed.
