@@ -34,7 +34,7 @@ Start with a small feed-forward neural demand model; consider LSTM only after ha
 
 ## Delivery boundaries
 
-Travel recommendations concern timing on a single corridor. API deployment and monitoring are simulations. Actual Power BI authoring is a separate deliverable: this scaffold supplies a specification, not a completed dashboard. Include reproducible model-artifact retrieval and exported MLflow evidence before submission; currently large artifacts and runtime tracking stores are ignored.
+Travel recommendations concern timing on a single corridor. API deployment and monitoring are simulations. Actual Power BI authoring is a separate deliverable: this scaffold supplies a specification, not a completed dashboard. The checked-in submission archive contains all five saved models and the original records for the five reported MLflow runs. Extraction verifies hashes and relocates MLflow metadata to the reader's checkout. Runtime files remain ignored; model and run evidence are available without retraining.
 
 ## Implemented weather and recommendation choices
 

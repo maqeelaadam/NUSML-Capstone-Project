@@ -4,7 +4,7 @@ The existing destination is https://github.com/maqeelaadam/NUSML-Capstone-Projec
 
 ## Continue the existing repository
 
-Clone the repository or open the local Git copy in GitHub Desktop. The setup history is a framework; continue committing real task work incrementally. Review changed files before each commit and use a specific message. Push after completing a coherent task. Use the supplied task and pull request templates if helpful.
+Clone the repository or open the local Git copy in GitHub Desktop. The history contains incremental analytical, Python and ML task commits; continue with coherent changes. Review changed files before each commit and use a specific message. Push after completing a coherent task. Use the supplied task and pull request templates if helpful.
 
 ## Import the local framework into a new empty repository
 

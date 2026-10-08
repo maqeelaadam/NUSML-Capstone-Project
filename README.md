@@ -8,6 +8,7 @@ NUS School of Computing AMLDS capstone using the Metro Interstate Traffic Volume
 
 - [Current status and remaining work](docs/STATUS.md)
 - [Course requirements and evidence](docs/REQUIREMENTS.md)
+- [Submission review and saved-model instructions](docs/SUBMISSION_REVIEW.md)
 - [Analytical definitions and decisions](docs/DECISIONS.md)
 - [Part 1 insights report](capstone_part1/reports/insights_report.pdf)
 - [Part 2 methodology report](capstone_part2/reports/methodology_report.pdf)
@@ -41,7 +42,7 @@ Folder names follow the brief's explicit `capstone_part2` and `capstone_part3` d
 
 ## Reproduce
 
-Use **Python 3.12** and run from the repository root. The tested environment is pinned in requirements-lock.txt. Raw data and binary models are not committed; the commands regenerate them.
+Use **Python 3.12** and run from the repository root. The tested environment is pinned in requirements-lock.txt. Raw data and extracted binary models are not committed individually. The verified_models.zip archive contains the five saved models and original MLflow records; restoration is available without retraining. The commands below regenerate the full workflow.
 
 ```bash
 python3.12 -m venv .venv
@@ -55,6 +56,7 @@ To run stages separately:
 
 ```bash
 python -m capstone_part2.pipeline
+python -m capstone_part1.run_requested_sql
 python -m capstone_part1.analyze
 python -m capstone_part3.train
 python -m capstone_part3.unsupervised.analyze
@@ -65,6 +67,15 @@ python -m unittest discover -s tests -v
 ```
 
 Reports are checked-in results from the verified runs. Re-running workflows changes result files; review and regenerate reports if numerical outputs change. The current reports are authored reviewable documents, not automatically refreshed by reproduce.py.
+
+## Review saved models without retraining
+
+```bash
+python scripts/submission_artifacts.py restore
+python scripts/submission_artifacts.py verify
+```
+
+Restoration checks every archived file hash, restores the five models plus the selected-model alias, and reconstructs the five original MLflow runs at the new checkout location. The API can then run immediately. Dataset queries still require importing the CSV and running the Python pipeline. See [submission review instructions](docs/SUBMISSION_REVIEW.md).
 
 ## Traffic application and API
 
@@ -82,11 +93,11 @@ The API starts locally at http://127.0.0.1:8000. Its interactive documentation i
 
 Every module uses `logging.getLogger(__name__)`. Entry points configure console and file handlers, with timestamp, log level, module/logger name and message. INFO covers milestones, shapes and save paths; WARNING covers recoverable changes with counts/reasons; ERROR covers failures; DEBUG captures internal values only with `--log-level DEBUG`. Internal progress uses logging; print is reserved for CLI answers. The checked-in `capstone_part2/pipeline.log` is a genuine completed pipeline run. Other logs are generated under their respective part folders.
 
-Training stores MLflow runs under `.runtime/mlruns` and exports grader-readable records to capstone_part3/experiments/tracking_export.json. Saved models go under capstone_part3/models and are rebuilt by the training command. The exported JSON can be inspected without a tracking server. An interactive MLflow UI requires the full MLflow distribution; the pinned environment uses mlflow-skinny for programmatic tracking. model_versions.csv records candidate releases and selection; binary model artifacts, runtime stores and generated datasets are ignored to keep the repository portable.
+Training stores MLflow runs under `.runtime/mlruns` and exports grader-readable records to capstone_part3/experiments/tracking_export.json. Saved models go under capstone_part3/models and are rebuilt by the training command. The exported JSON can be inspected without a tracking server. An interactive MLflow UI requires the full MLflow distribution; the pinned environment uses mlflow-skinny for programmatic tracking. model_versions.csv records candidate releases and selection; extracted model files, runtime stores and generated datasets are ignored; the portable submission archive is checked in under capstone_part3/artifacts/.
 
 ## Important assumptions
 
-The main analytical grain is one record per observed hour. Traffic values match at repeated timestamps; numeric weather readings are averaged and the highest-severity weather category is selected. Missing hours remain missing. Holiday labels are propagated only within dates with an observed holiday label. These choices and alternative raw-record results are documented.
+Primary Part 1 SQL answers use all 48,204 raw CSV records. The 1-2 page insights report and final report use these results consistently; supplementary hourly outputs are labelled separately. Parts 2 and 3 use one record per observed hour. Traffic values match at repeated timestamps; numeric weather readings are averaged and the highest-severity weather category is selected. Missing hours remain missing. Holiday labels are propagated only within dates with an observed holiday label. These choices and alternative raw-record results are documented.
 
 Part 1 congestion is always volume >5500 and uses fixed Low/Medium/High categories. Part 2/3 quartile categories are separately named. ML partitions are chronological, with identical timestamps kept together; imputation references, scalers, encoders and label quartiles are fitted on training data only. Inputs exclude traffic targets and their derived labels. Recommendations concern timing on one corridor; the proxy, API, and monitoring require further validation before operational use.
 

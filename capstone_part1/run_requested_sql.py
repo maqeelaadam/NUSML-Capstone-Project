@@ -51,7 +51,7 @@ def run(source, output):
             results['queries'][name]=values
             if values:
                 with (output/(name+'.csv')).open('w',newline='') as handle:
-                    writer=csv.DictWriter(handle,fieldnames=list(values[0]))
+                    writer=csv.DictWriter(handle,fieldnames=list(values[0]),lineterminator='\n')
                     writer.writeheader();writer.writerows(values)
             logger.info('Executed SQL query %s: %d output rows',name,len(values))
         (output/'all_sql_results.json').write_text(json.dumps(results,indent=2)+'\n')

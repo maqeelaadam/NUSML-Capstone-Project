@@ -18,7 +18,7 @@ def main(argv=None):
         logging.basicConfig(level=logging.INFO,format="%(asctime)s | %(levelname)s | %(name)s | %(message)s",handlers=[logging.StreamHandler(),logging.FileHandler(ROOT/"reproduction.log",encoding="utf-8")],force=True)
         stages=[]
         if args.source:stages.append([str(ROOT/"scripts/import_data.py"),"--source",str(args.source.resolve())])
-        modules=["capstone_part2.pipeline","capstone_part1.analyze","capstone_part3.train","capstone_part3.unsupervised.analyze","capstone_part3.explainability.explain","capstone_part3.monitoring.check","capstone_part3.recommendations.engine"]
+        modules=["capstone_part2.pipeline","capstone_part1.run_requested_sql","capstone_part1.analyze","capstone_part3.train","capstone_part3.unsupervised.analyze","capstone_part3.explainability.explain","capstone_part3.monitoring.check","capstone_part3.recommendations.engine"]
         stages.extend([["-m",module] for module in modules])
         stages.append(["-m","unittest","discover","-s","tests","-v"])
         env=os.environ.copy()

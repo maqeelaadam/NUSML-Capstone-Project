@@ -1,0 +1,8 @@
+{
+  "archive": "capstone_part3/artifacts/verified_models.zip",
+  "archive_sha256": "ef6a15d04d86f3f8440ad3028325cda41d361a2fbdf65bc19ad0d832ac3cedf9",
+  "archive_bytes": 13870671,
+  "model_count": 5,
+  "original_run_count": 5,
+  "manifest_file_count": 123
+}

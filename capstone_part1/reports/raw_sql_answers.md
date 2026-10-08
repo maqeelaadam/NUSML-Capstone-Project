@@ -1,6 +1,6 @@
 # SQL Answers for the Supplied Traffic CSV
 
-All primary calculations use all 48,204 rows from the supplied CSV without cleaning or removing duplicates. SQLite performs every calculation. These results differ from the earlier hourly-aggregated report. The data contains 40,575 distinct timestamps, so probabilities are per CSV record and raw sums are not deduplicated counts of passing vehicles.
+All primary calculations use all 48,204 rows from the supplied CSV without cleaning or removing duplicates. SQLite performs every calculation. These primary results also appear in insights_report.pdf; the separately labelled hourly supplement uses a different aggregation and denominator. The data contains 40,575 distinct timestamps, so probabilities are per CSV record and raw sums are not deduplicated counts of passing vehicles.
 
 ## 1.2 Annual traffic trends
 

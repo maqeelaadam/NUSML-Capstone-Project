@@ -1,5 +1,5 @@
--- STARTER QUERIES ONLY: first import supplied CSV as traffic_raw.
--- Decide and document observation vs hourly grain before final interpretations.
+-- Supplementary audit queries: first import supplied CSV as traffic_raw.
+-- Primary submission answers: requested_raw_analysis.sql (all supplied CSV rows).
 SELECT COUNT(*) AS rows_loaded, COUNT(DISTINCT date_time) AS unique_hours,
        MIN(date_time) AS first_timestamp, MAX(date_time) AS last_timestamp
 FROM traffic_raw;
