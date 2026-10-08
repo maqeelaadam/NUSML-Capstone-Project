@@ -49,6 +49,6 @@ The joint probability is 0.036574, versus 0.040917 for the product of marginal p
 
 After cleaning and combining repeated timestamps, the separate hourly view has mean traffic 3,290.65 and correlation 0.139. These differ from raw-row values because observations receive different weights and invalid weather is imputed. The hourly view is used for the Python figures and ML evaluation, not substituted for the raw SQL answers.
 
-Hourly mean demand peaks at 16:00 (5,709 vehicles/hour); weekdays average 3,557 versus 2,624 on weekends. Prioritise time/day patterns for travel advice, show recording coverage and weather sample sizes, and avoid causal weather or accident claims. The actual Power BI dashboard remains unfinished; import code, measures and a specification are supplied.
+Hourly mean demand peaks at 16:00 (5,709 vehicles/hour); weekdays average 3,557 versus 2,624 on weekends. Prioritise time/day patterns for travel advice, show recording coverage and weather sample sizes, and avoid causal weather or accident claims. I use macOS and do not have access to Power BI Desktop in my current setup. I was therefore unable to complete Part 1 Task 4, the Power BI section. Power BI preparation files and dashboard-specific outputs are excluded from this submission.
 
 Evidence: requested_raw_analysis.sql and results/requested_raw_analysis/ contain primary SQLite outputs; raw_sql_answers.md contains full calculations. Supplementary hourly outputs are in results/statistics_probability.json.

@@ -1,32 +1,32 @@
-2026-10-08 03:43:03,672 | INFO | capstone_part2.data_io | Schema validated: 9 columns
-2026-10-08 03:43:03,747 | INFO | capstone_part2.data_io | Loaded 48204 rows and 9 columns from /Users/aqeelaadam/Documents/ChatGPT/NUSML/NUSML-Capstone-Project/data/raw/Metro_Interstate_Traffic_Volume.csv
-2026-10-08 03:43:03,783 | INFO | capstone_part2.cleaning | Categorical check holiday: no changes
-2026-10-08 03:43:03,792 | INFO | capstone_part2.cleaning | Categorical check weather_main: no changes
-2026-10-08 03:43:03,798 | INFO | capstone_part2.cleaning | Categorical check weather_description: no changes
-2026-10-08 03:43:03,809 | INFO | capstone_part2.cleaning | Date/time validation complete: 48204 retained rows
-2026-10-08 03:43:03,835 | WARNING | capstone_part2.cleaning | Dropped 17 rows: exact duplicates
-2026-10-08 03:43:03,842 | WARNING | capstone_part2.cleaning | Flagged 10 rows: missing/nonfinite/impossible temp
-2026-10-08 03:43:03,849 | WARNING | capstone_part2.cleaning | Flagged 1 rows: missing/nonfinite/impossible rain_1h
-2026-10-08 03:43:03,855 | INFO | capstone_part2.cleaning | Numeric check snow_1h: no invalid values
-2026-10-08 03:43:03,864 | INFO | capstone_part2.cleaning | Numeric check clouds_all: no invalid values
-2026-10-08 03:43:03,873 | INFO | capstone_part2.cleaning | Numeric check traffic_volume: no invalid values
-2026-10-08 03:43:03,877 | WARNING | capstone_part2.cleaning | Imputed 4 rows: temp using reference median for month 1
-2026-10-08 03:43:03,878 | WARNING | capstone_part2.cleaning | Imputed 6 rows: temp using reference median for month 2
-2026-10-08 03:43:03,878 | INFO | capstone_part2.cleaning | Imputation check complete: temp
-2026-10-08 03:43:03,880 | WARNING | capstone_part2.cleaning | Imputed 1 rows: rain_1h using reference median for month 7
-2026-10-08 03:43:03,880 | INFO | capstone_part2.cleaning | Imputation check complete: rain_1h
-2026-10-08 03:43:03,880 | INFO | capstone_part2.cleaning | Imputation check complete: snow_1h
-2026-10-08 03:43:03,881 | INFO | capstone_part2.cleaning | Imputation check complete: clouds_all
-2026-10-08 03:43:03,904 | WARNING | capstone_part2.cleaning | Aggregated 7612 extra records into 40575 unique hours: mean weather readings, identical traffic count, highest-severity category
-2026-10-08 03:43:03,914 | WARNING | capstone_part2.cleaning | Modified 1150 rows: propagate observed holiday label across its calendar date
-2026-10-08 03:43:03,916 | INFO | capstone_part2.feature_engineering | Before feature engineering: rows=40575 columns=9
-2026-10-08 03:43:03,934 | INFO | capstone_part2.feature_engineering | After feature engineering: rows=40575 columns=36
-2026-10-08 03:43:03,998 | INFO | __main__ | Saved 48187 rows and 9 columns to /Users/aqeelaadam/Documents/ChatGPT/NUSML/NUSML-Capstone-Project/data/processed/cleaned_observations.csv
-2026-10-08 03:43:04,064 | INFO | __main__ | Saved 40575 rows and 9 columns to /Users/aqeelaadam/Documents/ChatGPT/NUSML/NUSML-Capstone-Project/data/processed/hourly_traffic.csv
-2026-10-08 03:43:04,299 | INFO | __main__ | Saved 40575 rows and 36 columns to /Users/aqeelaadam/Documents/ChatGPT/NUSML/NUSML-Capstone-Project/data/processed/traffic_features.csv
-2026-10-08 03:43:04,375 | INFO | capstone_part2.visualizations | Saved figure to /Users/aqeelaadam/Documents/ChatGPT/NUSML/NUSML-Capstone-Project/capstone_part2/figures/traffic_by_hour.png
-2026-10-08 03:43:04,407 | INFO | capstone_part2.visualizations | Saved figure to /Users/aqeelaadam/Documents/ChatGPT/NUSML/NUSML-Capstone-Project/capstone_part2/figures/weekday_weekend.png
-2026-10-08 03:43:04,451 | INFO | capstone_part2.visualizations | Saved figure to /Users/aqeelaadam/Documents/ChatGPT/NUSML/NUSML-Capstone-Project/capstone_part2/figures/traffic_by_weather.png
-2026-10-08 03:43:04,499 | INFO | capstone_part2.visualizations | Saved figure to /Users/aqeelaadam/Documents/ChatGPT/NUSML/NUSML-Capstone-Project/capstone_part2/figures/temperature_traffic.png
-2026-10-08 03:43:04,500 | INFO | capstone_part2.visualizations | Saved figure interpretations to /Users/aqeelaadam/Documents/ChatGPT/NUSML/NUSML-Capstone-Project/capstone_part2/figures/INTERPRETATIONS.md
-2026-10-08 03:43:04,500 | INFO | __main__ | Pipeline completed successfully
+2026-10-08 21:27:07,035 | INFO | capstone_part2.data_io | Schema validated: 9 columns
+2026-10-08 21:27:07,112 | INFO | capstone_part2.data_io | Loaded 48204 rows and 9 columns from /Users/aqeelaadam/Documents/ChatGPT/NUSML/NUSML-Capstone-Project/data/raw/Metro_Interstate_Traffic_Volume.csv
+2026-10-08 21:27:07,147 | INFO | capstone_part2.cleaning | Categorical check holiday: no changes
+2026-10-08 21:27:07,155 | INFO | capstone_part2.cleaning | Categorical check weather_main: no changes
+2026-10-08 21:27:07,161 | INFO | capstone_part2.cleaning | Categorical check weather_description: no changes
+2026-10-08 21:27:07,174 | INFO | capstone_part2.cleaning | Date/time validation complete: 48204 retained rows
+2026-10-08 21:27:07,200 | WARNING | capstone_part2.cleaning | Dropped 17 rows: exact duplicates
+2026-10-08 21:27:07,207 | WARNING | capstone_part2.cleaning | Flagged 10 rows: missing/nonfinite/impossible temp
+2026-10-08 21:27:07,214 | WARNING | capstone_part2.cleaning | Flagged 1 rows: missing/nonfinite/impossible rain_1h
+2026-10-08 21:27:07,221 | INFO | capstone_part2.cleaning | Numeric check snow_1h: no invalid values
+2026-10-08 21:27:07,230 | INFO | capstone_part2.cleaning | Numeric check clouds_all: no invalid values
+2026-10-08 21:27:07,240 | INFO | capstone_part2.cleaning | Numeric check traffic_volume: no invalid values
+2026-10-08 21:27:07,244 | WARNING | capstone_part2.cleaning | Imputed 4 rows: temp using reference median for month 1
+2026-10-08 21:27:07,246 | WARNING | capstone_part2.cleaning | Imputed 6 rows: temp using reference median for month 2
+2026-10-08 21:27:07,246 | INFO | capstone_part2.cleaning | Imputation check complete: temp
+2026-10-08 21:27:07,247 | WARNING | capstone_part2.cleaning | Imputed 1 rows: rain_1h using reference median for month 7
+2026-10-08 21:27:07,248 | INFO | capstone_part2.cleaning | Imputation check complete: rain_1h
+2026-10-08 21:27:07,248 | INFO | capstone_part2.cleaning | Imputation check complete: snow_1h
+2026-10-08 21:27:07,248 | INFO | capstone_part2.cleaning | Imputation check complete: clouds_all
+2026-10-08 21:27:07,272 | WARNING | capstone_part2.cleaning | Aggregated 7612 extra records into 40575 unique hours: mean weather readings, identical traffic count, highest-severity category
+2026-10-08 21:27:07,283 | WARNING | capstone_part2.cleaning | Modified 1150 rows: propagate observed holiday label across its calendar date
+2026-10-08 21:27:07,285 | INFO | capstone_part2.feature_engineering | Before feature engineering: rows=40575 columns=9
+2026-10-08 21:27:07,301 | INFO | capstone_part2.feature_engineering | After feature engineering: rows=40575 columns=35
+2026-10-08 21:27:07,368 | INFO | __main__ | Saved 48187 rows and 9 columns to /Users/aqeelaadam/Documents/ChatGPT/NUSML/NUSML-Capstone-Project/data/processed/cleaned_observations.csv
+2026-10-08 21:27:07,435 | INFO | __main__ | Saved 40575 rows and 9 columns to /Users/aqeelaadam/Documents/ChatGPT/NUSML/NUSML-Capstone-Project/data/processed/hourly_traffic.csv
+2026-10-08 21:27:07,665 | INFO | __main__ | Saved 40575 rows and 35 columns to /Users/aqeelaadam/Documents/ChatGPT/NUSML/NUSML-Capstone-Project/data/processed/traffic_features.csv
+2026-10-08 21:27:07,747 | INFO | capstone_part2.visualizations | Saved figure to /Users/aqeelaadam/Documents/ChatGPT/NUSML/NUSML-Capstone-Project/capstone_part2/figures/traffic_by_hour.png
+2026-10-08 21:27:07,780 | INFO | capstone_part2.visualizations | Saved figure to /Users/aqeelaadam/Documents/ChatGPT/NUSML/NUSML-Capstone-Project/capstone_part2/figures/weekday_weekend.png
+2026-10-08 21:27:07,825 | INFO | capstone_part2.visualizations | Saved figure to /Users/aqeelaadam/Documents/ChatGPT/NUSML/NUSML-Capstone-Project/capstone_part2/figures/traffic_by_weather.png
+2026-10-08 21:27:07,875 | INFO | capstone_part2.visualizations | Saved figure to /Users/aqeelaadam/Documents/ChatGPT/NUSML/NUSML-Capstone-Project/capstone_part2/figures/temperature_traffic.png
+2026-10-08 21:27:07,875 | INFO | capstone_part2.visualizations | Saved figure interpretations to /Users/aqeelaadam/Documents/ChatGPT/NUSML/NUSML-Capstone-Project/capstone_part2/figures/INTERPRETATIONS.md
+2026-10-08 21:27:07,876 | INFO | __main__ | Pipeline completed successfully

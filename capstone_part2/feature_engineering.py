@@ -35,7 +35,6 @@ def engineer_features(df):
     thresholds = df.traffic_volume.quantile([0.25, 0.5, 0.75]).to_numpy()
     logger.debug("Descriptive traffic quartiles: %s", thresholds.tolist())
     df["congestion_category_quartile"] = quartile_categories(df.traffic_volume, thresholds)
-    df["traffic_category_fixed"] = np.select([df.traffic_volume < 4500, df.traffic_volume <= 5500], ["Low", "Medium"], default="High")
     for column in ["temp", "clouds_all"]:
         mean, std = df[column].mean(), df[column].std(ddof=0)
         logger.debug("Descriptive %s mean=%s std=%s", column, mean, std)

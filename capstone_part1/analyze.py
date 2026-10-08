@@ -3,7 +3,6 @@ import json
 import logging
 import sqlite3
 from pathlib import Path
-import numpy as np
 import pandas as pd
 
 logger=logging.getLogger(__name__)
@@ -57,13 +56,8 @@ def analyze():
         "pearson_temperature_traffic":float(hourly.temp.corr(volume)),
         "hourly_probability":probability(hourly),"raw_observation_probability_sensitivity":probability(raw)}
     (RESULTS/"statistics_probability.json").write_text(json.dumps(stats,indent=2)+"\n")
-    weather=hourly.groupby("weather_main").traffic_volume.agg(["count","mean"]).sort_values("mean")
-    weather.to_csv(RESULTS/"weather_traffic.csv")
-    daily=hourly.loc[hourly.date_time.dt.year.isin([2015,2016,2017])].set_index("date_time").traffic_volume.resample("D").agg(["count","mean"])
-    daily.to_csv(RESULTS/"daily_traffic_2015_2017.csv")
-    hourly.loc[hourly.date_time.dt.year.eq(2017)].groupby(hourly.date_time.dt.hour).traffic_volume.agg(["count","mean"]).to_csv(RESULTS/"hourly_traffic_2017.csv")
     (RESULTS/"data_quality.json").write_text(json.dumps({"raw_shape":list(raw.shape),"missing_cells":raw.isna().sum().to_dict(),"raw_unique_hours":raw.date_time.nunique(),"exact_duplicates":int(raw.duplicated().sum()),"zero_kelvin":int(raw.temp.le(0).sum()),"rain_above_9000":int(raw.rain_1h.gt(9000).sum())},indent=2)+"\n")
-    logger.info("Saved statistical, probability, weather, daily and hourly outputs")
+    logger.info("Saved supplementary statistical, probability and data-quality outputs")
     return stats
 
 

@@ -10,7 +10,7 @@ Repeated timestamps have matching traffic targets. The hourly table averages num
 
 ## Feature engineering and figures
 
-Features include hour, weekday, weekend, month, holiday flag, sine/cosine encodings for hour and weekday, Celsius temperature, severe-weather and textual low-visibility indicators, and one-hot weather columns. Temperature and cloud cover have standardised versions. The descriptive table includes fixed traffic categories for Part 1 and separately named quartile congestion categories. Full-dataset statistics describe historical data; Part 3 re-fits imputers, scales, encoders and quartiles using training data only.
+Features include hour, weekday, weekend, month, holiday flag, sine/cosine encodings for hour and weekday, Celsius temperature, severe-weather and textual low-visibility indicators, and one-hot weather columns. Temperature and cloud cover have standardised versions. The descriptive table includes data-driven quartile congestion categories. Full-dataset statistics describe historical data; Part 3 re-fits imputers, scales, encoders and quartiles using training data only.
 
 Four Matplotlib outputs show hourly demand, weekday/weekend differences, weather-category averages and temperature-volume scatter. Peak mean demand occurs at 16:00 (5,709 vehicles/hour), compared with 373 at 03:00. Weekday mean traffic is 3,557 versus 2,624 on weekends. Weather comparisons depend on timing, severity aggregation and rare-category sample sizes; temperature shows broad traffic variation at similar readings. Each figure has a saved interpretation.
 

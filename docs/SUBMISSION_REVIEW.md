@@ -1,6 +1,6 @@
 # Submission review guide
 
-The completed non-Power-BI sections are prepared for review. Power BI is still required by the course brief; a specification is not a finished dashboard. No Canvas submission has been made.
+The SQL, Python and ML sections are prepared for review. I use macOS and do not have access to Power BI Desktop in my current setup. I was therefore unable to complete Part 1 Task 4, the Power BI section. Power BI preparation files and dashboard-specific outputs are excluded from this submission. The course brief includes Task 4, which is recorded as not completed. No Canvas submission has been made.
 
 ## Start with the reports
 
@@ -30,5 +30,5 @@ Dataset-dependent CLI queries and complete reproduction also require importing t
 ## Before course submission
 
 1. Read and be able to explain aggregation, monthly median imputation, chronological evaluation and the weather/congestion proxy. The classifier does not predict observed accidents.
-2. Complete and validate the actual Power BI dashboard, save the PBIX and visual evidence, and update the outstanding status in the reports and requirement map.
+2. Review the documented macOS access limitation before submission.
 3. Verify grader access and submit the repository link through Canvas according to the instructor's instructions.

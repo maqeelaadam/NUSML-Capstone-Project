@@ -28,7 +28,7 @@ def main(argv=None):
         for stage in stages:
             logger.info("Running stage %s",stage)
             subprocess.run([sys.executable,*stage],cwd=ROOT,env=env,check=True)
-        logger.info("All implemented stages and acceptance checks completed; Power BI still requires authoring")
+        logger.info("All included SQL/Python/ML stages and acceptance checks completed; macOS Power BI access limitation is documented")
         return 0
     except (OSError,subprocess.CalledProcessError) as exc:
         logger.error("Reproduction stopped at failed stage: %s",exc,exc_info=True);return 1

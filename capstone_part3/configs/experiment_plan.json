@@ -1,5 +1,5 @@
 {
-  "status": "implemented and verified; Power BI deliverable remains pending",
+  "status": "SQL/Python/ML implemented and verified; Power BI not completed because of documented macOS access limitation",
   "random_seed": 42,
   "split": {
     "strategy": "chronological_by_unique_timestamp",

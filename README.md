@@ -2,7 +2,7 @@
 
 NUS School of Computing AMLDS capstone using the Metro Interstate Traffic Volume dataset to analyse historical westbound I-94 demand, build a reproducible Python pipeline, and simulate an AI mobility solution.
 
-**Status: analytical and Python/ML workflows implemented and run; actual Power BI dashboard and final course submission remain pending.** The supplied capstone instructions and GitHub guide were reviewed before implementation. No accident dataset was supplied: classification uses a documented weather/congestion **proxy**, never a validated prediction of actual accidents.
+**Status: SQL analysis and Python/ML workflows implemented and verified. The Power BI section was not completed because of my macOS access limitation; final course submission is pending.** The supplied capstone instructions and GitHub guide were reviewed before implementation. No accident dataset was supplied: classification uses a documented weather/congestion **proxy**, never a validated prediction of actual accidents.
 
 ## Start here
 
@@ -17,7 +17,7 @@ NUS School of Computing AMLDS capstone using the Metro Interstate Traffic Volume
 
 ## What works
 
-Part 1 supplies verified SQLite loading, annual/holiday outputs, statistics, correlation, required congestion probabilities and odds ratio. Power Query import code, DAX measures and a dashboard specification are ready; a completed PBIX is still required.
+Part 1 supplies verified SQLite loading, annual/holiday outputs, statistics, correlation, required congestion probabilities and odds ratio. 
 
 Part 2 loads and validates the raw CSV, logs each cleaning stage, engineers calendar/weather/scaled features, saves four figures with interpretations, and runs three traffic-query commands. It produces 48,187 cleaned observations and 40,575 hourly records from 48,204 raw observations.
 
@@ -25,10 +25,14 @@ Part 3 compares two regressors and two proxy classifiers, trains a two-hidden-la
 
 On the chronological test set, the selected forest's traffic MAE is about 224 vehicles/hour with R² 0.964; the neural model's MAE is about 245. Models were selected using validation performance. These are historical conditional estimates with observed weather, not real-time forecasts. Nine acceptance checks passed.
 
+## Power BI access limitation
+
+I use macOS and do not have access to Power BI Desktop in my current setup. I was therefore unable to complete Part 1 Task 4, the Power BI section. Power BI preparation files and dashboard-specific outputs are excluded from this submission.
+
 ## Project structure
 
 ```text
-capstone_part1/   SQLite queries, analysis script, results, Power BI assets, report
+capstone_part1/   SQLite queries, analysis script, results and report
 capstone_part2/   Logged cleaning/features/figures pipeline and mini application
 capstone_part3/   Models, SHAP, rules, recommendations, API, monitoring, reports
 scripts/         Data import and complete reproduction commands
@@ -99,11 +103,11 @@ Training stores MLflow runs under `.runtime/mlruns` and exports grader-readable 
 
 Primary Part 1 SQL answers use all 48,204 raw CSV records. The 1-2 page insights report and final report use these results consistently; supplementary hourly outputs are labelled separately. Parts 2 and 3 use one record per observed hour. Traffic values match at repeated timestamps; numeric weather readings are averaged and the highest-severity weather category is selected. Missing hours remain missing. Holiday labels are propagated only within dates with an observed holiday label. These choices and alternative raw-record results are documented.
 
-Part 1 congestion is always volume >5500 and uses fixed Low/Medium/High categories. Part 2/3 quartile categories are separately named. ML partitions are chronological, with identical timestamps kept together; imputation references, scalers, encoders and label quartiles are fitted on training data only. Inputs exclude traffic targets and their derived labels. Recommendations concern timing on one corridor; the proxy, API, and monitoring require further validation before operational use.
+Part 1 congestion is always volume >5500. Parts 2/3 use data-driven quartile categories. ML partitions are chronological, with identical timestamps kept together; imputation references, scalers, encoders and label quartiles are fitted on training data only. Inputs exclude traffic targets and their derived labels. Recommendations concern timing on one corridor; the proxy, API, and monitoring require further validation before operational use.
 
 ## GitHub and submission
 
-Continue with descriptive commits for coherent tasks. [GitHub workflow](docs/GITHUB_WORKFLOW.md) explains the ZIP and Git bundle backups. Review the reports and remaining dashboard task before submitting the repository URL through Canvas. No grader invitation or Canvas submission has been sent.
+Continue with descriptive commits for coherent tasks. [GitHub workflow](docs/GITHUB_WORKFLOW.md) explains the ZIP and Git bundle backups. Review the reports and documented macOS access limitation before submitting the repository URL through Canvas. No grader invitation or Canvas submission has been sent.
 
 ## Dataset licence
 

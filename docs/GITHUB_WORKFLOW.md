@@ -35,5 +35,5 @@ Only use this new-destination procedure for an empty repository. A ZIP is a file
 - Confirm all required deliverables and actual task commits are present.
 - Review tracked files for credentials and unnecessary files.
 - Verify the repository URL. For a public repository, check grader access without login. For a private repository, invite the grader using their verified GitHub username and confirm acceptance.
-- Ensure figures, required sample logs, reports, dashboard and MLflow evidence are tracked or reproducibly accessible.
+- Ensure figures, required sample logs, reports and MLflow evidence are tracked or reproducibly accessible.
 - Submit the repository URL through Canvas yourself. No invitations or submissions are sent by this framework.

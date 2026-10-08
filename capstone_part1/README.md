@@ -9,9 +9,11 @@ python -m capstone_part2.pipeline
 python -m capstone_part1.analyze
 ```
 
-The primary SQLite database is regenerated at data/processed/requested_raw_analysis.sqlite; sql/requested_raw_analysis.sql supplies every requested calculation and the results are in results/requested_raw_analysis/. The supplementary database is data/processed/traffic.sqlite; analyze.py exports the hourly statistics and dashboard preparation tables. sql/traffic_analysis.sql supplies additional audit queries. reports/insights_report.pdf is the two-page report, with editable Markdown alongside it.
+The primary SQLite database is regenerated at data/processed/requested_raw_analysis.sqlite; sql/requested_raw_analysis.sql supplies every requested calculation and the results are in results/requested_raw_analysis/. The supplementary database is data/processed/traffic.sqlite; analyze.py exports supplementary hourly statistics. sql/traffic_analysis.sql supplies additional audit queries. reports/insights_report.pdf is the two-page report, with editable Markdown alongside it.
 
-**Remaining:** build and validate the actual Power BI dashboard. powerbi/traffic_import.pq imports/prepares the raw CSV using a TrafficCsvPath parameter; measures.dax supplies KPI measures. DASHBOARD_SPEC.md lists visuals/slicers. If the dashboard uses the prepared hourly table, explicitly document that grain and repeat the required Power Query checks. Raw-record averages differ from hourly averages. No completed PBIX is claimed.
+## Power BI access limitation
+
+I use macOS and do not have access to Power BI Desktop in my current setup. I was therefore unable to complete Part 1 Task 4, the Power BI section. Power BI preparation files and dashboard-specific outputs are excluded from this submission.
 
 ## Requested calculations using the unchanged CSV
 

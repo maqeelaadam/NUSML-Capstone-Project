@@ -16,7 +16,7 @@ UCI describes timestamps as local CST. Preserve supplied local timestamps and do
 
 ## Definitions
 
-Use `traffic_category_fixed` for Part 1 (Low <4500, Medium 4500–5500, High >5500), and `congestion_category_quartile` for Part 2/3 (<=Q1, <=Q2, <=Q3, >Q3). Part 1 congestion probability always uses volume >5500; high temperature always uses >292 K. Define clear as weather_main `Clear` and cloudy as `Clouds`, explicitly excluding other categories from the clear/cloudy odds-ratio table. State denominators and handle zero contingency cells.
+Use `congestion_category_quartile` for Part 2/3 (<=Q1, <=Q2, <=Q3, >Q3). The dashboard-only fixed category has been removed with the Power BI materials. Part 1 congestion probability always uses volume >5500; high temperature always uses >292 K. Define clear as weather_main `Clear` and cloudy as `Clouds`, explicitly excluding other categories from the clear/cloudy odds-ratio table. State denominators and handle zero contingency cells.
 
 Specify sample vs population variance/SD in the report. Explain that weather–traffic correlation is observational and can reflect time-of-day/seasonal effects.
 
@@ -34,7 +34,7 @@ Start with a small feed-forward neural demand model; consider LSTM only after ha
 
 ## Delivery boundaries
 
-Travel recommendations concern timing on a single corridor. API deployment and monitoring are simulations. Actual Power BI authoring is a separate deliverable: this scaffold supplies a specification, not a completed dashboard. The checked-in submission archive contains all five saved models and the original records for the five reported MLflow runs. Extraction verifies hashes and relocates MLflow metadata to the reader's checkout. Runtime files remain ignored; model and run evidence are available without retraining.
+Travel recommendations concern timing on a single corridor. API deployment and monitoring are simulations. Power BI material is excluded at the student's request because they use macOS and do not have access to Power BI Desktop in their current setup. Part 1 Task 4 was not completed because of this access limitation. The checked-in submission archive contains all five saved models and the original records for the five reported MLflow runs. Extraction verifies hashes and relocates MLflow metadata to the reader's checkout. Runtime files remain ignored; model and run evidence are available without retraining.
 
 ## Implemented weather and recommendation choices
 
