@@ -23,8 +23,8 @@ def configure_logging(log_path, level):
 
 def main(argv=None):
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--input",type=Path,default=ROOT/"data/raw/Metro_Interstate_Traffic_Volume.csv")
-    parser.add_argument("--output-dir",type=Path,default=ROOT/"data/processed")
+    parser.add_argument("--input",type=Path,default=ROOT/"capstone_part2/data/raw/Metro_Interstate_Traffic_Volume.csv")
+    parser.add_argument("--output-dir",type=Path,default=ROOT/"capstone_part2/data/processed")
     parser.add_argument("--figures-dir",type=Path,default=ROOT/"capstone_part2/figures")
     parser.add_argument("--log-file",type=Path,default=ROOT/"capstone_part2/pipeline.log")
     parser.add_argument("--log-level",choices=["DEBUG","INFO","WARNING","ERROR"],default="INFO")

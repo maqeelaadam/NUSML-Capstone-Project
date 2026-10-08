@@ -1,4 +1,0 @@
-# Analytics dependencies; use requirements-lock.txt for the verified environment.
-numpy
-pandas
-matplotlib

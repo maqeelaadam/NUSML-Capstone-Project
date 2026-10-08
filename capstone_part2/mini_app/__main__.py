@@ -22,7 +22,7 @@ def main(argv=None):
         logger.error("Cannot configure application logging: %s",exc)
         return 1
     parser=QueryParser(description=__doc__)
-    parser.add_argument("--data",type=Path,default=ROOT/"data/processed/traffic_features.csv")
+    parser.add_argument("--data",type=Path,default=ROOT/"capstone_part2/data/processed/traffic_features.csv")
     sub=parser.add_subparsers(dest="command",required=True)
     at=sub.add_parser("at");at.add_argument("--datetime",required=True)
     high=sub.add_parser("high-traffic");high.add_argument("--threshold",type=float,default=5500);high.add_argument("--limit",type=int,default=10)

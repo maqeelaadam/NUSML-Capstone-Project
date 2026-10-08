@@ -17,7 +17,7 @@ COLUMNS = ['holiday','temp','rain_1h','snow_1h','clouds_all','weather_main',
 
 def run(source, output):
     output.mkdir(parents=True,exist_ok=True)
-    database = ROOT / 'data/processed/requested_raw_analysis.sqlite'
+    database = ROOT / 'capstone_part2/data/processed/requested_raw_analysis.sqlite'
     database.parent.mkdir(parents=True,exist_ok=True)
     with source.open(encoding='utf-8-sig',newline='') as handle:
         reader = csv.DictReader(handle)
@@ -60,7 +60,7 @@ def run(source, output):
 
 def main(argv=None):
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--csv',type=Path,default=ROOT/'data/raw/Metro_Interstate_Traffic_Volume.csv')
+    parser.add_argument('--csv',type=Path,default=ROOT/'capstone_part2/data/raw/Metro_Interstate_Traffic_Volume.csv')
     parser.add_argument('--output',type=Path,default=ROOT/'capstone_part1/results/requested_raw_analysis')
     args=parser.parse_args(argv)
     try:

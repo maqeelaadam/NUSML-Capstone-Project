@@ -19,7 +19,7 @@ def main():
     try:
         logging.basicConfig(level=logging.INFO,format="%(asctime)s | %(levelname)s | %(name)s | %(message)s",handlers=[logging.StreamHandler(),logging.FileHandler(ROOT/"capstone_part3/explainability.log",encoding="utf-8")],force=True)
         model=joblib.load(ROOT/"capstone_part3/models/random_forest_regression.joblib")
-        df=pd.read_csv(ROOT/"data/processed/test_predictions.csv",keep_default_na=False,parse_dates=["date_time"])
+        df=pd.read_csv(ROOT/"capstone_part2/data/processed/test_predictions.csv",keep_default_na=False,parse_dates=["date_time"])
         sample=df.sample(min(150,len(df)),random_state=42)
         X=model.named_steps["preprocess"].transform(features(sample))
         names=model.named_steps["preprocess"].get_feature_names_out()

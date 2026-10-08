@@ -9,7 +9,7 @@ python -m capstone_part2.pipeline
 python -m capstone_part1.analyze
 ```
 
-The primary SQLite database is regenerated at data/processed/requested_raw_analysis.sqlite; sql/traffic_analysis.sql supplies every requested calculation and the results are in results/requested_raw_analysis/. The supplementary database is data/processed/traffic.sqlite; analyze.py exports supplementary hourly statistics. The same SQL file also includes the supplementary monthly coverage audit. reports/insights_report.pdf is the two-page report, with editable Markdown alongside it.
+The primary SQLite database is regenerated at capstone_part2/data/processed/requested_raw_analysis.sqlite; sql/traffic_analysis.sql supplies every requested calculation and the results are in results/requested_raw_analysis/. The supplementary database is capstone_part2/data/processed/traffic.sqlite; analyze.py exports supplementary hourly statistics. The same SQL file also includes the supplementary monthly coverage audit. reports/insights_report.pdf is the two-page report, with editable Markdown alongside it.
 
 ## Power BI access limitation
 

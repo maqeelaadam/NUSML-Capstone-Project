@@ -1,9 +1,0 @@
--r requirements.txt
-scikit-learn
-mlflow-skinny
-fastapi
-uvicorn
-shap
-mlxtend
-joblib
-scipy

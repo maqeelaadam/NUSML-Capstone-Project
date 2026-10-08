@@ -9,10 +9,9 @@ __pycache__/
 !.env.example
 *.pem
 *.key
-data/raw/*
-data/processed/*
-data/interim/*
-!data/**/.gitkeep
+capstone_part2/data/raw/*
+capstone_part2/data/processed/*
+!capstone_part2/data/**/.gitkeep
 *.db
 *.sqlite
 *.sqlite3

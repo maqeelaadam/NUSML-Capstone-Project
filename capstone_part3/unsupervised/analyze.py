@@ -18,7 +18,7 @@ ROOT=Path(__file__).resolve().parents[2]
 def main():
     try:
         logging.basicConfig(level=logging.INFO,format="%(asctime)s | %(levelname)s | %(name)s | %(message)s",handlers=[logging.StreamHandler(),logging.FileHandler(ROOT/"capstone_part3/unsupervised.log",encoding="utf-8")],force=True)
-        df=add_calendar(pd.read_csv(ROOT/"data/processed/hourly_traffic.csv",keep_default_na=False,parse_dates=["date_time"]))
+        df=add_calendar(pd.read_csv(ROOT/"capstone_part2/data/processed/hourly_traffic.csv",keep_default_na=False,parse_dates=["date_time"]))
         # Descriptive discovery uses all observed hours; it is not supervised holdout evaluation.
         variables=df[["hour_sin","hour_cos","traffic_volume"]].copy()
         variables["weather_severity"]=df.weather_main.map(WEATHER_SEVERITY).fillna(2)

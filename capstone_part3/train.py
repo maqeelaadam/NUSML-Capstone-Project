@@ -40,7 +40,7 @@ def classification_metrics(model,X,y):
 
 def train():
     RESULTS.mkdir(parents=True,exist_ok=True);MODELS.mkdir(parents=True,exist_ok=True)
-    raw=pd.read_csv(ROOT/"data/raw/Metro_Interstate_Traffic_Volume.csv",keep_default_na=False)
+    raw=pd.read_csv(ROOT/"capstone_part2/data/raw/Metro_Interstate_Traffic_Volume.csv",keep_default_na=False)
     raw_splits=chronological_split(raw)
     # All imputation references are from the training partition.
     train_hourly=hourly_view(clean_data(raw_splits[0]))
@@ -98,7 +98,7 @@ def train():
     predictions=test_hourly.copy()
     predictions["prediction"]=best.predict(X[2]);predictions["absolute_error"]=abs(predictions.prediction-predictions.traffic_volume)
     predictions["proxy_label"]=yclass[2];predictions["proxy_prediction"]=saved[classifier["name"]].predict(X[2])
-    predictions.to_csv(ROOT/"data/processed/test_predictions.csv",index=False)
+    predictions.to_csv(ROOT/"capstone_part2/data/processed/test_predictions.csv",index=False)
     group_rows=[]
     for column in ["weather_main"]:
         for value,group in predictions.groupby(column):

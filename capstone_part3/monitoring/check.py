@@ -24,7 +24,7 @@ def check_drift(reference,current,threshold=.2):
 def main():
     try:
         logging.basicConfig(level=logging.INFO,format="%(asctime)s | %(levelname)s | %(name)s | %(message)s",handlers=[logging.StreamHandler(),logging.FileHandler(ROOT/"capstone_part3/monitoring.log",encoding="utf-8")],force=True)
-        df=pd.read_csv(ROOT/"data/processed/hourly_traffic.csv",keep_default_na=False,parse_dates=["date_time"])
+        df=pd.read_csv(ROOT/"capstone_part2/data/processed/hourly_traffic.csv",keep_default_na=False,parse_dates=["date_time"])
         manifest=json.loads((ROOT/"capstone_part3/results/split_manifest.json").read_text())
         reference=df.loc[df.date_time.le(pd.Timestamp(manifest["train"]["last"]))]
         current=df.loc[df.date_time.ge(pd.Timestamp(manifest["test"]["first"]))]

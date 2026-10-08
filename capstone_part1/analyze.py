@@ -31,9 +31,9 @@ def probability(df):
 
 def analyze():
     RESULTS.mkdir(parents=True,exist_ok=True)
-    raw=pd.read_csv(ROOT/"data/raw/Metro_Interstate_Traffic_Volume.csv",keep_default_na=False)
-    hourly=pd.read_csv(ROOT/"data/processed/hourly_traffic.csv",keep_default_na=False,parse_dates=["date_time"])
-    db=ROOT/"data/processed/traffic.sqlite"
+    raw=pd.read_csv(ROOT/"capstone_part2/data/raw/Metro_Interstate_Traffic_Volume.csv",keep_default_na=False)
+    hourly=pd.read_csv(ROOT/"capstone_part2/data/processed/hourly_traffic.csv",keep_default_na=False,parse_dates=["date_time"])
+    db=ROOT/"capstone_part2/data/processed/traffic.sqlite"
     with sqlite3.connect(db) as con:
         raw.to_sql("traffic_raw",con,if_exists="replace",index=False)
         hourly.to_sql("traffic_hourly",con,if_exists="replace",index=False)

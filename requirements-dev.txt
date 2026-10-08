@@ -1,3 +1,0 @@
--r requirements-ml.txt
-httpx
-# PDF reporting uses the bundled artifact runtime; reports are already included.
