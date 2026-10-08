@@ -2,7 +2,7 @@
 
 ## Scope and data quality
 
-The primary Part 1 answers use all 48,204 rows and nine columns in the supplied CSV. Every required calculation is executed in SQLite by requested_raw_analysis.sql. A row is a weather/traffic observation, not necessarily a distinct hour: the file has 40,575 distinct timestamps and 17 exact duplicate rows. Raw sums can therefore repeat hourly vehicle counts. Parts 2 and 3 use a separately documented cleaned hourly view; its results are supplementary to the raw-file answers here.
+The primary Part 1 answers use all 48,204 rows and nine columns in the supplied CSV. Every required calculation is executed in SQLite by traffic_analysis.sql. A row is a weather/traffic observation, not necessarily a distinct hour: the file has 40,575 distinct timestamps and 17 exact duplicate rows. Raw sums can therefore repeat hourly vehicle counts. Parts 2 and 3 use a separately documented cleaned hourly view; its results are supplementary to the raw-file answers here.
 
 There are no empty CSV cells, but ten temperature readings are 0 K and one rainfall reading is 9,831.3 mm. Primary raw results preserve these readings. The later cleaning pipeline removes exact duplicates and imputes impossible weather readings using monthly medians. Data covers October 2012 to September 2018 at one westbound I-94 station, with gaps; it does not represent an entire city.
 
@@ -51,4 +51,4 @@ After cleaning and combining repeated timestamps, the separate hourly view has m
 
 Hourly mean demand peaks at 16:00 (5,709 vehicles/hour); weekdays average 3,557 versus 2,624 on weekends. Prioritise time/day patterns for travel advice, show recording coverage and weather sample sizes, and avoid causal weather or accident claims. I use macOS and do not have access to Power BI Desktop in my current setup. I was therefore unable to complete Part 1 Task 4, the Power BI section. Power BI preparation files and dashboard-specific outputs are excluded from this submission.
 
-Evidence: requested_raw_analysis.sql and results/requested_raw_analysis/ contain primary SQLite outputs; raw_sql_answers.md contains full calculations. Supplementary hourly outputs are in results/statistics_probability.json.
+Evidence: traffic_analysis.sql and results/requested_raw_analysis/ contain primary SQLite outputs; raw_sql_answers.md contains full calculations. Supplementary hourly outputs are in results/statistics_probability.json.

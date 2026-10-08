@@ -41,7 +41,7 @@ def run(source, output):
         )''')
         connection.executemany('INSERT INTO traffic_raw VALUES (?,?,?,?,?,?,?,?,?)',rows)
         logger.info('Loaded %d unchanged CSV rows into %s',len(rows),database)
-        sql = (ROOT / 'capstone_part1/sql/requested_raw_analysis.sql').read_text()
+        sql = (ROOT / 'capstone_part1/sql/traffic_analysis.sql').read_text()
         results = {'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),
                    'analysis_grain':'All supplied CSV rows unless explicitly labelled holiday-hour supplement',
                    'queries':{}}
